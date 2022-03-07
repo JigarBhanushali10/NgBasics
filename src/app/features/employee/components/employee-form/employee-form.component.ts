@@ -22,15 +22,19 @@ export class EmployeeFormComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.buildForm();
     this.getDepartmentData();
 
     const id = parseInt(this.activatedRoute.snapshot.params['id']);
-    this.buildForm();
 
+    
+    
     if (id) {
       this.editEmployee(id);
-    }
 
+    
+    
+    }
   }
 
   public buildForm() {
