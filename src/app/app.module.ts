@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DataBindingModule } from './features/data-binding/data-binding.module';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { UserFormModule } from './features/user-form/user-form.module';
 
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     CoreModule,
     AppRoutingModule,
     DataBindingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
 
 
 

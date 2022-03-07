@@ -9,6 +9,7 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IdToNamePipe } from './pipes/id-to-name.pipe';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { IdToNamePipe } from './pipes/id-to-name.pipe';
   imports: [
     CommonModule,
     EmployeeRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OverlayModule
   ]
 })
 export class EmployeeModule { }

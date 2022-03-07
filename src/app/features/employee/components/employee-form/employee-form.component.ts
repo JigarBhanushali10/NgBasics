@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Department, Employee } from '../../model/employee.model';
@@ -15,25 +15,26 @@ export class EmployeeFormComponent implements OnInit {
   empToEdit: number;
   departmentDetails: Department[];
 
+  @Input() id: number = 0;
+
+  @Output() close: EventEmitter<Event>;
+
 
   constructor(private userFormBuilder: FormBuilder,
     private employeeService: EmployeeService,
     private router: Router,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute) {
+       
+    this.close = new EventEmitter<Event>();
+
+    }
 
   ngOnInit(): void {
     this.buildForm();
     this.getDepartmentData();
 
-    const id = parseInt(this.activatedRoute.snapshot.params['id']);
-
-    
-    
-    if (id) {
-      this.editEmployee(id);
-
-    
-    
+    if (this.id !=0 ) {
+      this.editEmployee(this.id);
     }
   }
 
@@ -55,40 +56,56 @@ export class EmployeeFormComponent implements OnInit {
     })
   }
 
-  saveEmployee(id?: number) {
-    if (id) {
-      this.updateEmployee(id);
+  saveEmployee() {
+    if (this.id!= 0) {
+      this.updateEmployee(this.id);
+      
+     
     } else {
       this.addEmployee();
     }
+   
   }
 
   public editEmployee(id: number) {
     this.employeeService.getById(id).subscribe((res: Employee) => {
       console.log(res, this.getValue);
       this.employeeForm.patchValue(res);
-      this.empToEdit = res.id;
     })
   }
 
   public addEmployee() {
     const employeeData = this.employeeForm.value
     this.employeeService.addEmployee(employeeData).subscribe((res: Employee) => {
-      this.router.navigateByUrl('/employee/employee-list')
+      this.close.emit();
     })
   }
 
   public updateEmployee(id: number) {
     this.employeeService.editEmployee(id, this.employeeForm.value).subscribe((res: Employee) => {
-      this.router.navigateByUrl('/employee/employee-list')
+      this.close.emit();
     })
   }
 
+  // public getbyId(id: number){
+  //   this.employeeService.getById(id).subscribe((res: Employee) => {})
+  // }
+
   onReset() {
     this.employeeForm.reset();
+    console.log('close click');
+    this.close.emit();
   }
 
   get getValue() {
     return this.employeeForm
   }
+ 
+
+
+
 }
+function input() {
+  throw new Error('Function not implemented.');
+}
+

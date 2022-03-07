@@ -1,12 +1,12 @@
 
 <!-- {{employeeForm.value| json}} <br><br><br> -->
 <div class="formContainer">
-<div class="btnContainer">
+<!-- <div class="btnContainer">
     <button routerLink="/employee/employee-list"  class="btn">Click to view Employee-list</button>
-</div>
+</div> -->
 
 <div class="form">
-    <form [formGroup]="employeeForm" (ngSubmit)="saveEmployee(this.empToEdit)">
+    <form [formGroup]="employeeForm"  (ngSubmit)="saveEmployee()">
         <div class="firstname">
             <label for="firstname">Enter your First Name:</label>
             <input type="text" placeholder="First Name" formControlName="firstname" id="firstname">
@@ -52,8 +52,8 @@
                 <option *ngFor="let departmentValue of departmentDetails" [value]="departmentValue.id">{{departmentValue.name}}</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-submit">Submit</button>
-        <button type="button" (click)="onReset()" class="btn btn-reset">reset</button>
+        <button type="submit" class="btn btn-submit" >Submit</button>
+        <button type="button" (click)="onReset()" class="btn btn-reset">Cancel</button>
     </form>
 </div>
 
