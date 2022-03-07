@@ -1,4 +1,27 @@
+<div class="userFormHead d-flex" >
+    <span>
+        <h2>Users</h2>
+    </span>
 
-<app-user-form></app-user-form>
-<app-user-list></app-user-list>
+
+    <div class="d-flex userFormHead_operations">
+        <span class="form-group col-md-8 ">
+            <label  for="clients">Client:</label>
+            <select id="clients" class="form-control" >
+                <option selected disabled>All</option>
+                <option *ngFor="let clientValue of clientName" [value]="clientValue.id">{{clientValue.name}}</option>
+
+            </select>
+        </span>
+
+        <!-- toogle button to open form and disable when open -->
+        <span>
+            <button type="button" class="btn newEmployeeBtn" [disabled]="btnDisabled"
+                 (click)="toogleForm()">+ NEW USER</button>
+        </span>
+    </div>
+</div>
+
+<app-user-form [idOfUserToEdit]="idToEdit" [(showForm)]="showForm"></app-user-form>
+<app-user-list (editUserEmitter)="getUserToEdit($event)"></app-user-list>
 <!-- <router-outlet></router-outlet> -->

@@ -15,7 +15,7 @@ export class EmployeeFormComponent implements OnInit {
   empToEdit: number;
   departmentDetails: Department[];
 
-  
+
   constructor(private userFormBuilder: FormBuilder,
     private employeeService: EmployeeService,
     private router: Router,
@@ -23,13 +23,12 @@ export class EmployeeFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDepartmentData();
-  
+
     const id = parseInt(this.activatedRoute.snapshot.params['id']);
-   
-    if(id){
+    this.buildForm();
+
+    if (id) {
       this.editEmployee(id);
-    } else {
-      this.buildForm();
     }
 
   }
@@ -48,22 +47,21 @@ export class EmployeeFormComponent implements OnInit {
 
   getDepartmentData() {
     this.employeeService.getDepartments().subscribe((res: Department[]) => {
-      this.departmentDetails = res;      
+      this.departmentDetails = res;
     })
-
   }
 
   saveEmployee(id?: number) {
-    
-    if(id) {
+    if (id) {
       this.updateEmployee(id);
     } else {
       this.addEmployee();
     }
   }
-   
-  public editEmployee(id: number){
-    this.employeeService.getById(id).subscribe((res:Employee)=>{
+
+  public editEmployee(id: number) {
+    this.employeeService.getById(id).subscribe((res: Employee) => {
+      console.log(res, this.getValue);
       this.employeeForm.patchValue(res);
       this.empToEdit = res.id;
     })
@@ -86,8 +84,7 @@ export class EmployeeFormComponent implements OnInit {
     this.employeeForm.reset();
   }
 
-  get getValue()
-  {
-  return this.employeeForm  
+  get getValue() {
+    return this.employeeForm
   }
 }

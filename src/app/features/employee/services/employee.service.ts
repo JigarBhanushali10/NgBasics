@@ -9,7 +9,18 @@ import { Department,  Employee } from '../model/employee.model';
 })
 export class EmployeeService {
 
-  apiLink: string = environment.url
+  apiLink: string = environment.url;
+
+  
+
+  private data = [
+    {
+      id: 1,
+      name: 'hrishikesh',
+      email: 'patel@hrishikesh.com',
+      company: '1rivet'
+    }
+  ];
   
   constructor(private http: HttpClient) { }
 

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ClientName, Offices, UserDetails } from '../../models/user.model';
 import { UserService } from '../../services/user.service';
 
@@ -11,12 +11,15 @@ import { UserService } from '../../services/user.service';
 })
 export class UserFormComponent implements OnInit {
 
-
+  @Input() showForm: boolean;
+  @Output() showFormChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+ 
+  
   userForm: FormGroup;
   officeDetails: Offices[];
   clientName: ClientName[];
-  idOfUserToEdit: number
 
+  @Input() idOfUserToEdit: number;
 
   constructor(private userFormBuilder: FormBuilder,
     private userServices: UserService,
@@ -27,12 +30,7 @@ export class UserFormComponent implements OnInit {
   ngOnInit(): void {
     this.userBuildForm()
     this.getOfficeDetails()
-    this.getClientNames()
-
-
-    const id = parseInt(this.activatedRoute.snapshot.params['id']);
-
-
+    // this.getClientNames()
   }
 
   public userBuildForm() {
@@ -65,11 +63,11 @@ export class UserFormComponent implements OnInit {
   // function to add user
 
   saveUser() {
-    
+
     // debugger
     if (this.userForm.valid) {
       this.addUser();
-     
+
 
     }
     else {
@@ -118,22 +116,22 @@ export class UserFormComponent implements OnInit {
 
 
   onCancel() {
-    this.showForm = false
-    this.btnDisabled = false;
     this.userForm.reset();
+    this.showForm = false;
+    this.showFormChange.emit(this.showForm);
   }
 
 
-  showForm: boolean = false;
+  // showForm: boolean = false;
 
-  btnDisabled: boolean = false
-  toogleForm() {
+  // btnDisabled: boolean = false
+  // toogleForm() {
 
-    this.showForm = true
+  //   this.showForm = true
 
-    this.btnDisabled = true;
-    // this.route.navigateByUrl(`Users`)
-  }
+  //   this.btnDisabled = true;
+  //   // this.route.navigateByUrl(`Users`)
+  // }
 
 
   get getValue() {

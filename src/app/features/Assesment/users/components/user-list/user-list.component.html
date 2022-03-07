@@ -24,7 +24,7 @@
                 <td class="table-cell">{{user.office}}</td>
                 <td class="table-cell">{{user.phoneNo}}</td>
                 <td class="table-cell">
-                    <button class="btn btn-info btnSize">Edit</button>
+                    <button class="btn btn-info btnSize" type="button" (click)="editUser(user.id)">Edit</button>
 
                     <button class="btn btn-danger " type="button" (click)="deleteUser(user.id)">Delete</button>
                     <!-- <button class="btn btn-danger " type="button" >Delete</button> -->

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserDetails } from '../../models/user.model';
@@ -12,14 +12,14 @@ import { UserService } from '../../services/user.service';
 export class UserListComponent implements OnInit {
 
   public userDetails: UserDetails[];
-  
 
-  constructor(private userServices: UserService,private router:Router) { }
+  @Output() editUserEmitter: EventEmitter<number> = new EventEmitter<number>();
+
+  constructor(private userServices: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.getUsersData()
   }
-
 
   // function to get list of users
   getUsersData() {
@@ -35,7 +35,8 @@ export class UserListComponent implements OnInit {
       this.getUsersData();
     })
   }
-//  fucntion to send id of user and na
-  
-
+  //  fucntion to send id of user and na
+  public editUser(id: number) {
+    this.editUserEmitter.emit(id);
+  }
 }

@@ -68,15 +68,6 @@
   ],
   "UserDetails": [
     {
-      "id": 3,
-      "firstName": "asfsa",
-      "lastName": "asdasdas",
-      "email": "asd@aa.com",
-      "phoneNo": 4524,
-      "clientName": "1",
-      "office": "2"
-    },
-    {
       "id": 4,
       "firstName": "jigar",
       "lastName": "bhanushali",
@@ -96,12 +87,12 @@
     },
     {
       "id": 6,
-      "firstName": "aaaa",
-      "lastName": "aaaa",
-      "email": "aa@aa.com",
-      "phoneNo": 321,
-      "clientName": "1",
-      "office": "1"
+      "firstName": "asfsa",
+      "lastName": "asdasdas",
+      "email": "sd@cs.com",
+      "phoneNo": 56,
+      "clientName": "2",
+      "office": "2"
     }
   ],
   "Offices": [
