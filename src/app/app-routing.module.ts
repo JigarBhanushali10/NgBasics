@@ -33,6 +33,10 @@ const routes: Routes = [
     path: 'resume',
     loadChildren: () => import('./features/resume-builder/resume-builder.module').then(m => m.ResumeBuilderModule)
   },
+  {
+    path: 'newassesment',
+    loadChildren: () => import('./features/newassesment/newassesment.module').then(m => m.NewassesmentModule)
+  },
   { path: 'Users', loadChildren: () => import('./features/Assesment/users/users.module').then(m => m.UsersModule) },
 
   {

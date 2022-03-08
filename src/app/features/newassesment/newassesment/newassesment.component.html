@@ -1,0 +1,20 @@
+<h1 #ele1>Check Element reference</h1>
+
+<div>
+    Crud Data
+    <p *ngFor="let user of crudData; let i = index;" >
+       <input type="checkbox" (click)="selectedData(user.id)"/> 
+       {{i+'.  '+user.name + ' ' + user.Age}}
+       <button (click)="openUpdate(user.name,user.Age,user.id)">Edit</button>
+    </p>
+    
+</div>
+
+<input type="text" [(ngModel)]="name" placeholder="Name">
+<input type="text" [(ngModel)]="age" placeholder="Age">
+<button [disabled]="name == '' && age == '' " *ngIf="showAdd" (click)="addFunc()">Add</button>
+
+<button [disabled]="selectDataArray.length==0" (click)="deletFunc()">Delete</button>
+
+<button (click)="update()" *ngIf="!showAdd">Update</button>
+<button (click)="cancel()" *ngIf="!showAdd">Cancel</button>
