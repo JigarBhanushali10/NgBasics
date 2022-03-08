@@ -2,6 +2,7 @@ import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DeleteComponent } from 'src/app/shared/component/delete/delete.component';
 import { Department, Employee } from '../../model/employee.model';
 import { EmployeeService } from '../../services/employee.service';
 import { EmployeeFormComponent } from '../employee-form/employee-form.component';
@@ -16,7 +17,7 @@ export class EmployeeListComponent implements OnInit {
   departments: Department[];
   empToEdit: Employee
 
-  constructor(private employeeService: EmployeeService, private router:Router,private overlay: Overlay) { }
+  constructor(private employeeService: EmployeeService, private router: Router, private overlay: Overlay) { }
 
   ngOnInit(): void {
     this.getEmployeesData();
@@ -34,22 +35,17 @@ export class EmployeeListComponent implements OnInit {
 
   }
 
-  
+
 
   public editEmployee(id: number) {
-   
-    this.displayOverlay(id)
-    }
-  
 
-  public deleteEmployee(id: number) {
-    this.employeeService.deleteEmployee(id).subscribe((res) => {
-      this.getEmployeesData();
-    })
+    this.displayOverlay(id)
   }
 
+
+
   // overlay compontnt
-   displayOverlay(id?: number) {
+  displayOverlay(id?: number) {
     const overlayRef = this.overlay.create({
       hasBackdrop: true,
       positionStrategy: this.overlay
@@ -57,20 +53,47 @@ export class EmployeeListComponent implements OnInit {
         .global()
         .centerHorizontally()
         .right(),
-        
+
     });
 
     const component = new ComponentPortal(EmployeeFormComponent);
     const componentRef = overlayRef.attach(component);
 
-    if(id){
+    if (id) {
       componentRef.instance.id = id;
     }
     componentRef.instance.close.subscribe(() => {
       overlayRef.detach(); this.getEmployeesData()
     });
-
   }
 
+
+
+
+  // delete popup
+  public deleteEmployee(id: number) {
+    const overlayRef = this.overlay.create({
+      hasBackdrop: true,
+      positionStrategy: this.overlay
+        .position()
+        .global()
+        .centerHorizontally()
+        .centerVertically()
+
+    });
+
+    const component = new ComponentPortal(DeleteComponent);
+    const componentRef = overlayRef.attach(component);
+
+    componentRef.instance.delete.subscribe(() => {
+      this.employeeService.deleteEmployee(id).subscribe((res) => {
+        overlayRef.detach(); this.getEmployeesData()
+
+      })
+    });
+    componentRef.instance.close.subscribe(() => {
+      overlayRef.detach(); this.getEmployeesData()
+    });
+  }
 
 }

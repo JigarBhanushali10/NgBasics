@@ -15,26 +15,16 @@
   ],
   "Employee": [
     {
-      "firstname": "asd",
-      "lastname": "asd",
-      "email": "J@J.COM",
-      "phoneNo": 888,
-      "dateOfEmployment": "2022-02-16",
-      "gender": "female",
-      "department": "1",
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "phoneNo": "",
+      "dateOfEmployment": "",
+      "gender": "",
+      "department": "",
       "id": 1
     },
     {
-      "firstname": "awefwdg",
-      "lastname": "a",
-      "email": "a",
-      "phoneNo": 5289378934,
-      "dateOfEmployment": "",
-      "gender": "",
-      "department": "",
-      "id": 12
-    },
-    {
       "firstname": "",
       "lastname": "",
       "email": "",
@@ -42,27 +32,7 @@
       "dateOfEmployment": "",
       "gender": "",
       "department": "",
-      "id": 13
-    },
-    {
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "phoneNo": "",
-      "dateOfEmployment": "",
-      "gender": "",
-      "department": "",
-      "id": 14
-    },
-    {
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "phoneNo": "",
-      "dateOfEmployment": "",
-      "gender": "",
-      "department": "",
-      "id": 15
+      "id": 2
     }
   ],
   "ResumeData": [
