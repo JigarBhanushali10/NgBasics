@@ -37,7 +37,14 @@ const routes: Routes = [
     path: 'newassesment',
     loadChildren: () => import('./features/newassesment/newassesment.module').then(m => m.NewassesmentModule)
   },
-  { path: 'Users', loadChildren: () => import('./features/Assesment/users/users.module').then(m => m.UsersModule) },
+  {
+    path: 'Users', 
+    loadChildren: () => import('./features/Assesment/users/users.module').then(m => m.UsersModule)
+  },
+  {
+    path: 'ngTemplate', 
+    loadChildren: () => import('./features/ng-template-outlet/ng-template-outlet.module').then(m => m.NgTemplateOutletModule)
+  },
 
   {
     path: '**',
