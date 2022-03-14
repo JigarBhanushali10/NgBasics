@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
+import { JavascriptComponent } from './features/javascript/javascript.component';
 
 
 
@@ -45,12 +46,17 @@ const routes: Routes = [
     path: 'ngTemplate', 
     loadChildren: () => import('./features/ng-template-outlet/ng-template-outlet.module').then(m => m.NgTemplateOutletModule)
   },
+  {
+    path: 'javascript',
+    component:JavascriptComponent
+  },
 
   {
     path: '**',
     component: PageNotFoundComponent
 
   }
+
 
 ];
 

@@ -1,0 +1,79 @@
+<table>
+    <thead>
+        <tr>
+            <th>Sno.</th>
+            <th>
+                First Name
+            </th>
+            <th>
+                Company </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Age
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr *ngFor="let user of tem ; let i = index" >
+            
+            <td>{{i+1}}</td>
+            <td>
+                
+                {{user.firstName}}
+            </td>
+            <td>
+                {{user.company}}
+            </td>
+            <td>
+                {{user.gender}}
+            </td>
+            <td>
+                {{user.age}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+replaced company from 1rivet to tesla 
+<table>
+    <thead>
+        <tr>
+            <th>Sno.</th>
+            <th>
+                First Name
+            </th>
+            <th>
+                Company </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Age
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr *ngFor="let user of temp ; let i = index" >
+            
+            <td>{{i+1}}</td>
+            <td>
+                
+                {{user.firstName}}
+            </td>
+            <td>
+                {{user.company}}
+            </td>
+            <td>
+                {{user.gender}}
+            </td>
+            <td>
+                {{user.age}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+

@@ -7,6 +7,7 @@ import { DataBindingModule } from './features/data-binding/data-binding.module';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JavascriptComponent } from './features/javascript/javascript.component';
 
 // import { UserFormModule } from './features/user-form/user-form.module';
 
@@ -14,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
+    JavascriptComponent,
 
 
   ],
