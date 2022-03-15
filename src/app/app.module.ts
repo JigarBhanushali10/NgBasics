@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JavascriptComponent } from './features/javascript/javascript.component';
 
+
 // import { UserFormModule } from './features/user-form/user-form.module';
 
 
@@ -16,8 +17,6 @@ import { JavascriptComponent } from './features/javascript/javascript.component'
   declarations: [
     AppComponent,
     JavascriptComponent,
-
-
   ],
 
   imports: [
@@ -27,9 +26,6 @@ import { JavascriptComponent } from './features/javascript/javascript.component'
     DataBindingModule,
     HttpClientModule,
     BrowserAnimationsModule
-
-
-
   ],
 
   providers: [],

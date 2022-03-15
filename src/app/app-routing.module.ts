@@ -50,6 +50,7 @@ const routes: Routes = [
     path: 'javascript',
     component:JavascriptComponent
   },
+  { path: 'mvpUser', loadChildren: () => import('./MVP_pattern_modules/user/user.module').then(m => m.UserModule) },
 
   {
     path: '**',
