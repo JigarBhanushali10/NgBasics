@@ -30,7 +30,7 @@ export class UserFormComponent implements OnInit {
   ngOnInit(): void {
     this.userBuildForm()
     this.getOfficeDetails()
-    // this.getClientNames()
+    this.getClientNames()
   }
 
   public userBuildForm() {

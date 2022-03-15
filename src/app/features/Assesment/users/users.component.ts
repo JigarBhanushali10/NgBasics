@@ -33,14 +33,20 @@ export class UsersComponent implements OnInit {
 
   toogleForm() {
 
-    this.showForm = true
+    this.showForm = true;
 
     this.btnDisabled = true;
+
+    console.log(this.showForm, this.btnDisabled);
+    
     // this.route.navigateByUrl(`Users`)
   }
-
+  
   showFormChange() {
     console.log('oko');
-    this.btnDisabled = !this.showForm;
+    console.log('1',this.showForm, this.btnDisabled);
+    this.showForm = false;
+    this.btnDisabled = false;
+    console.log('2',this.showForm, this.btnDisabled);
   }
 }

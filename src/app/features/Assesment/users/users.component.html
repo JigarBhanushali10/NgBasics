@@ -22,6 +22,6 @@
     </div>
 </div>
 
-<app-user-form [idOfUserToEdit]="idToEdit" [(showForm)]="showForm"></app-user-form>
+<app-user-form [idOfUserToEdit]="idToEdit" [showForm]="showForm" (showFormChange)="showFormChange()"></app-user-form>
 <app-user-list (editUserEmitter)="getUserToEdit($event)"></app-user-list>
 <!-- <router-outlet></router-outlet> -->
