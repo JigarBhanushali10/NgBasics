@@ -15,14 +15,16 @@ export class ok {
 
 export class JavascriptComponent implements OnInit {
 
-    temp: any;
-    tem: Array<ok>;
+    mapedArray: Array<ok>;
+    filteredArray: Array<ok>;
+    spreadedArray:any;
+    stringyfyedArray:any
 
 
     constructor() {
         this.filter()
-        // this.spread () 
-        // this.stringyfy () 
+        this.spread () 
+        this.stringyfy () 
         this.map() 
     }
 
@@ -96,14 +98,10 @@ export class JavascriptComponent implements OnInit {
     }
 
     public filter() {
-        this.tem = this.array1.filter((data) => data.company === '1rivet');
-        console.log(this.tem);
+        this.filteredArray = this.array1.filter((data) => data.company === '1rivet');
+        console.log("filtered array",this.filteredArray);
     }
-    // public filter(){
-    // this.temp = this.array1.filter((data) => data.company === '1rivet');
-    // console.log(this.array1.filter((data) => data.company === '1rivet'));
-
-    // }
+    
 
 
     temporary: {
@@ -135,8 +133,8 @@ export class JavascriptComponent implements OnInit {
 
     // Deeeeeeeep TCopy
     public stringyfy() {
-        this.temp = this.temporary.map((firm) => {
-            console.log(JSON.stringify(firm));
+        this.stringyfyedArray = this.temporary.map((firm) => {
+            console.log("original array",JSON.stringify(firm));
             let t = JSON.parse(JSON.stringify(firm));
             if (t.name === 'Ooook') {
                 t.obj.a = "Tesla"
@@ -144,13 +142,13 @@ export class JavascriptComponent implements OnInit {
             return t;
         }
         )
-        console.log(this.temp)
-        console.log(this.temporary)
+        console.log("stringyfyedArray",this.stringyfyedArray)
+        console.log("stringyfyedArray-temporary",this.temporary)
     }
 
     // Shallow Copy
     public spread() {
-        this.temp = this.temporary.map((firm) => {
+        this.spreadedArray = this.temporary.map((firm) => {
             let t = { ...firm };
             if (t.name === 'Ooook') {
                 t.obj.a = "Tesla"
@@ -158,12 +156,12 @@ export class JavascriptComponent implements OnInit {
             return t;
         }
         )
-        console.log(this.temp)
-        console.log(this.temporary)
+        console.log("spreadedArray",this.spreadedArray)
+        console.log("spreadedArray-temporary",this.temporary)
     }
 
     public map() {
-        this.temp = this.array2.map((firm) => {
+        this.mapedArray = this.array2.map((firm) => {
             let t = { ...firm };
             if (t.company === '1rivet') {
                 t.company = "Tesla"
@@ -171,7 +169,7 @@ export class JavascriptComponent implements OnInit {
             return t;
         }
         )
-        console.log(this.temp)
+        console.log(this.mapedArray)
         console.log(this.array2)
     }
 
