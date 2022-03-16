@@ -1,14 +1,14 @@
-<aside class="innerSidenav">
+<aside class="innerSidenav h-100 position-relative d-flex flex-column">
 
 
-  <div class="sidebarHead ">
-    <span class="icon-angular"></span>
-    <h3 class="sidebarHeader">Angular Tasks</h3>
+  <div class="sidebarHead px-5 py-1 d-flex align-items-center">
+    <span class="icon-angular fs-2"></span>
+    <h3 class="sidebarHeader text-primary ps-1 m-0 text-nowrap">Angular Tasks</h3>
   </div>
-  <div class="profile d-flex">
+  <div class="profile d-flex pt-4 px-1">
     <figure class="profile_picture">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe-0YmptDvusEEkZrUIx-AgFwn9wOG12FzhA&usqp=CAU"
-        alt="">
+        alt="" class="rounded-circle">
     </figure>
     <div class="profile_info d-flex flex-column">
       <span class="profile_name">Leo Messi</span>
@@ -20,39 +20,39 @@
 
 
 
-  <nav class="sidebarBody d-flex flex-column">
+  <nav class="sidebarBody d-flex flex-column h-100 overflow-auto justify-content-between flex-grow-1">
 
     <div>
-      <div class="nav_links">
+      <div class="nav_links py-2">
 
-        <ul>
-          <li>
-            <button routerLink="/data-binding" class="btn_sidenav" routerLinkActive="btn_sidenav_active"> <span
-                class="icons icon-database"></span> <span class="links"> Data-Binding</span> </button>
+        <ul class="nav-list px-2 border-bottom border-light">
+          <li class="nav-items d-flex ">
+            <button routerLink="/data-binding" class="btn_sidenav d-flex  text-start border-0 p-2 m-1 flex-grow-1 rounded-3 align-items-center overflow-hidden btn btn-outline-primary" routerLinkActive="btn_sidenav_active "> <span
+                class="icons ps-2 icon-database"></span> <span class="links ps-2"> Data-Binding</span> </button>
+          </li> 
+          <li class="nav-items d-flex">
+            <button routerLink="/directives" class="btn_sidenav d-flex  text-start border-0 p-2 m-1 flex-grow-1 rounded-3 align-items-center overflow-hidden btn btn-outline-primary" routerLinkActive="btn_sidenav_active"> <span
+                class="icons ps-2 icon-cogs"></span> <span class="links ps-2"> Directives</span> </button>
           </li>
-          <li>
-            <button routerLink="/directives" class="btn_sidenav" routerLinkActive="btn_sidenav_active"> <span
-                class="icons icon-cogs"></span> <span class="links"> Directives</span> </button>
+          <li class="nav-items d-flex">
+            <button routerLink="/forms" class="btn_sidenav d-flex  text-start border-0 p-2 m-1 flex-grow-1 rounded-3 align-items-center overflow-hidden btn btn-outline-primary" routerLinkActive="btn_sidenav_active"> <span
+                class="icons ps-2 icon-wpforms"></span> <span class="links ps-2">Forms</span> </button>
           </li>
-          <li>
-            <button routerLink="/forms" class="btn_sidenav" routerLinkActive="btn_sidenav_active"> <span
-                class="icons icon-wpforms"></span> <span class="links">Forms</span> </button>
+          <li class="nav-items d-flex">
+            <button class="btn_sidenav d-flex  text-start border-0 p-2 m-1 flex-grow-1 rounded-3 align-items-center overflow-hidden btn btn-outline-primary" routerLink="employee" routerLinkActive="btn_sidenav_active"> <span
+                class="icons ps-2 icon-user-tie"></span> <span class="links ps-2">Employee</span> </button>
           </li>
-          <li>
-            <button class="btn_sidenav" routerLink="employee" routerLinkActive="btn_sidenav_active"> <span
-                class="icons icon-user-tie"></span> <span class="links">Employee</span> </button>
-          </li>
-          <!-- <li>
-        <button class="btn_sidenav" routerLink="user-forms" routerLinkActive="btn_sidenav_active"> <span
-            class="icons icon-profile"></span> <span class="links">User-Form</span> </button>
+          <!-- <li class="nav-items d-flex">
+        <button class="btn_sidenav d-flex  text-start border-0 p-2 m-1 flex-grow-1 rounded-3 align-items-center overflow-hidden btn btn-outline-primary" routerLink="user-forms" routerLinkActive="btn_sidenav_active"> <span
+            class="icons ps-2 icon-profile"></span> <span class="links ps-2">User-Form</span> </button>
       </li> -->
-          <li>
-            <button class="btn_sidenav" routerLink="newassesment" routerLinkActive="btn_sidenav_active"> <span
-                class="icons icon-user"></span> <span class="links">New Assesment</span> </button>
+          <li class="nav-items d-flex">
+            <button class="btn_sidenav d-flex  text-start border-0 p-2 m-1 flex-grow-1 rounded-3 align-items-center overflow-hidden btn btn-outline-primary" routerLink="newassesment" routerLinkActive="btn_sidenav_active"> <span
+                class="icons ps-2 icon-user"></span> <span class="links ps-2">New Assesment</span> </button>
           </li>
-          <li>
-            <button class="btn_sidenav" routerLink="/ngTemplate" routerLinkActive="btn_sidenav_active"> <span
-                class="icons icon-user"></span> <span class="links">ng-templat</span> </button>
+          <li class="nav-items d-flex">
+            <button class="btn_sidenav d-flex  text-start border-0 p-2 m-1 flex-grow-1 rounded-3 align-items-center overflow-hidden btn btn-outline-primary" routerLink="/ngTemplate" routerLinkActive="btn_sidenav_active"> <span
+                class="icons ps-2 icon-user"></span> <span class="links ps-2">ng-templat</span> </button>
           </li>
         </ul>
       </div>
@@ -60,25 +60,25 @@
       <div class="nav_links">
 
 
-        <ul>
+        <ul class="nav-list px-2 border-bottom border-light">
 
 
-          <li>
-            <button class="btn_sidenav" routerLink="resume" routerLinkActive="btn_sidenav_active"><span
-                class="icons icon-resume-portfolio-svgrepo-com"></span> <span class="links">Resume Builder</span>
+          <li class="nav-items d-flex">
+            <button class="btn_sidenav d-flex  text-start border-0 p-2 m-1 flex-grow-1 rounded-3 align-items-center overflow-hidden btn btn-outline-primary" routerLink="resume" routerLinkActive="btn_sidenav_active"><span
+                class="icons ps-2 icon-resume-portfolio-svgrepo-com"></span> <span class="links ps-2">Resume Builder</span>
             </button>
           </li>
-          <li>
-            <button class="btn_sidenav" routerLink="Users" routerLinkActive="btn_sidenav_active"> <span
-                class="icons icon-user"></span> <span class="links">Users</span> </button>
+          <li class="nav-items d-flex">
+            <button class="btn_sidenav d-flex  text-start border-0 p-2 m-1 flex-grow-1 rounded-3 align-items-center overflow-hidden btn btn-outline-primary" routerLink="Users" routerLinkActive="btn_sidenav_active"> <span
+                class="icons ps-2 icon-user"></span> <span class="links ps-2">Users</span> </button>
           </li>
-          <li>
-            <button class="btn_sidenav" routerLink="javascript" routerLinkActive="btn_sidenav_active"> <span
-                class="icons icon-user"></span> <span class="links">Javascript</span> </button>
+          <li class="nav-items d-flex">
+            <button class="btn_sidenav d-flex  text-start border-0 p-2 m-1 flex-grow-1 rounded-3 align-items-center overflow-hidden btn btn-outline-primary" routerLink="javascript" routerLinkActive="btn_sidenav_active"> <span
+                class="icons ps-2 icon-user"></span> <span class="links ps-2">Javascript</span> </button>
           </li>
-          <li>
-            <button class="btn_sidenav" routerLink="mvpMentor" routerLinkActive="btn_sidenav_active"> <span
-                class="icons icon-user"></span> <span class="links">MVP</span> </button>
+          <li class="nav-items d-flex">
+            <button class="btn_sidenav d-flex  text-start border-0 p-2 m-1 flex-grow-1 rounded-3 align-items-center overflow-hidden btn btn-outline-primary" routerLink="mvpMentor" routerLinkActive="btn_sidenav_active"> <span
+                class="icons ps-2 icon-user"></span> <span class="links ps-2">MVP</span> </button>
           </li>
 
         </ul>
@@ -89,9 +89,9 @@
 
 
     <div class="log-out">
-      <ul>
-        <li>
-          <button class="btn_sidenav"> <span class="icon-logout"></span> <span class="links">Log-Out</span> </button>
+      <ul class="nav-list px-2">
+        <li class="nav-items d-flex">
+          <button class="btn_sidenav d-flex  text-start border-0 p-2 m-1 flex-grow-1 rounded-3 align-items-center overflow-hidden btn btn-outline-primary"> <span class="icon-logout"></span> <span class="links ps-2">Log-Out</span> </button>
         </li>
       </ul>
     </div>

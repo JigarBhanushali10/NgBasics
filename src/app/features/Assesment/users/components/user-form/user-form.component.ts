@@ -95,6 +95,7 @@ export class UserFormComponent implements OnInit {
     const userData = this.userForm.value
     this.userServices.addUser(userData).subscribe((res: UserDetails) => {
       alert('added')
+      this.onCancel();
     })
   }
 

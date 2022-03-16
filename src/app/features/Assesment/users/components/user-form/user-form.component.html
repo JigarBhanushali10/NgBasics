@@ -39,15 +39,15 @@
                     <input type="text" class="form-control" id="firsttName" placeholder="First Name" name="firsttName"
                         formControlName="firstName">
                         <div *ngIf="getValue['firstName'].touched">
-                            <span class="text-danger small "
+                            <small class="text-danger "
                                 *ngIf="getValue['firstName'].errors && getValue['firstName'].errors['required']">
                                 First-name required
-                            </span>
+                            </small>
                         </div>
-                        <div *ngIf="getValue['firstName']?.errors?.['minlength']" class="text-danger small" >
+                        <div *ngIf="getValue['firstName']?.errors?.['minlength']" class="text-danger" >
                             Name must be at least 4 characters long.
                         </div>
-                        <div *ngIf="getValue['firstName']?.errors?.['maxlength']" class="text-danger small" style="color: red;">
+                        <div *ngIf="getValue['firstName']?.errors?.['maxlength']" class="text-danger" style="color: red;">
                             Name must be at least 8 characters long.
                         </div>
                 </div>
@@ -55,21 +55,21 @@
                     <input type="text" class="form-control" id="lastName" placeholder="Last Name" name="lastName"
                         formControlName="lastName">
                         <div *ngIf="getValue['lastName'].touched">
-                            <span class="text-danger small"
+                            <small class="text-danger"
                                 *ngIf="getValue['lastName'].errors && getValue['lastName'].errors['required']">
                                 Last-name required
-                            </span>
+                            </small>
                         </div>
                 </div>
                 <div class="form_col">
                     <input type="email" class="form-control" id="email" placeholder="Email" name="email"
                         formControlName="email">
                         <div *ngIf="getValue['email'].touched">
-                            <span class="text-danger small"
+                            <small class="text-danger"
                                 *ngIf="getValue['email'].errors && getValue['email'].errors['required']">
                                 Email required
-                            </span>
-                            <div class="text-danger small" *ngIf="getValue['email'].errors?.['email']">Email must be a valid email address</div>
+                            </small>
+                            <div class="text-danger" *ngIf="getValue['email'].errors?.['email']">Email must be a valid email address</div>
                         </div>
                         
                 </div>
@@ -77,10 +77,10 @@
                     <input type="number" class="form-control" id="contactNo" placeholder="Primary Contact Number"
                         name="contactNo" formControlName="phoneNo">
                         <div *ngIf="getValue['phoneNo'].touched">
-                            <span class="text-danger small"
+                            <small class="text-danger"
                                 *ngIf="getValue['phoneNo'].errors && getValue['phoneNo'].errors['required']">
                                 Contact number required
-                            </span>
+                            </small>
                         </div>
                         
                 </div>
@@ -97,10 +97,10 @@
 
                     </select>
                     <div *ngIf="getValue['clientName'].touched">
-                        <span class="text-danger small"
+                        <small class="text-danger"
                             *ngIf="getValue['clientName'].errors && getValue['clientName'].errors['required']">
                             Client Name required
-                        </span>
+                        </small>
                     </div>
                 </div>
                 <div class="form-group form_col">
@@ -111,10 +111,10 @@
 
                     </select>
                     <div *ngIf="getValue['office'].touched">
-                        <span class="text-danger small"
+                        <small class="text-danger"
                             *ngIf="getValue['office'].errors && getValue['office'].errors['required']">
                             Office Details required
-                        </span>
+                        </small>
                     </div>
                 </div>
             </div>
