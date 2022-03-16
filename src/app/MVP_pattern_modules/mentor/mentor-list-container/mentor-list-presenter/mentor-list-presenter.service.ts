@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Subject } from 'rxjs/internal/Subject';
 
 @Injectable()
-export class UserListPresenterService {
+export class MentorListPresenterService {
   
   private _delete: Subject<number>;
   public delete$: Observable<number>;

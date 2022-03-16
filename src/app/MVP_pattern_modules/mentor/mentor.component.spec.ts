@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserListContainerComponent } from './user-list-container.component';
+import { MentorComponent } from './mentor.component';
 
-describe('UserListContainerComponent', () => {
-  let component: UserListContainerComponent;
-  let fixture: ComponentFixture<UserListContainerComponent>;
+describe('MentorComponent', () => {
+  let component: MentorComponent;
+  let fixture: ComponentFixture<MentorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserListContainerComponent ]
+      declarations: [ MentorComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserListContainerComponent);
+    fixture = TestBed.createComponent(MentorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

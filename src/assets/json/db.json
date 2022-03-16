@@ -33,6 +33,26 @@
       "gender": "",
       "department": "",
       "id": 2
+    },
+    {
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "phoneNo": "",
+      "dateOfEmployment": "",
+      "gender": "",
+      "department": "",
+      "id": 3
+    },
+    {
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "phoneNo": "",
+      "dateOfEmployment": "",
+      "gender": "",
+      "department": "",
+      "id": 4
     }
   ],
   "ResumeData": [
@@ -64,17 +84,61 @@
         }
       ],
       "id": 1
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "designation": "",
+      "email": "",
+      "phoneNo": "",
+      "technicalSkills": [
+        {
+          "skillName": ""
+        }
+      ],
+      "experience": [
+        {
+          "companyName": "",
+          "designation": "",
+          "description": "",
+          "startYear": "",
+          "endYear": ""
+        }
+      ],
+      "education": [
+        {
+          "university": "",
+          "course": "",
+          "grade": ""
+        }
+      ],
+      "id": 2
     }
   ],
   "UserDetails": [
     {
-      "id": 1,
-      "firstName": "jigar",
-      "lastName": "bhanushali",
-      "email": "as@ds.com",
-      "phoneNo": 44,
+      "id": 2,
+      "firstName": "asfsa",
+      "lastName": "as",
+      "email": "sd@cs.com",
+      "phoneNo": 41,
       "clientName": "1",
       "office": "1"
+    },
+    {
+      "id": 3,
+      "firstName": "asfsa",
+      "lastName": "123",
+      "email": "asd@aa.com",
+      "phoneNo": 5,
+      "clientName": "1",
+      "office": "2"
+    },
+    {
+      "firstName": "asd",
+      "email": "asd@aa.com",
+      "phoneNo": 1,
+      "id": 4
     }
   ],
   "Offices": [

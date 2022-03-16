@@ -1,20 +1,20 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserDetails } from 'src/app/features/Assesment/users/models/user.model';
-import { UserListPresenterService } from '../user-list-presenter/user-list-presenter.service';
+import { MentorListPresenterService } from '../mentor-list-presenter/mentor-list-presenter.service';
 
 @Component({
-  selector: 'app-user-list-presentation',
-  templateUrl: './user-list-presentation.component.html',
-  styleUrls: ['./user-list-presentation.component.scss'],
-  viewProviders: [UserListPresenterService],
+  selector: 'app-mentor-list-presentation',
+  templateUrl: './mentor-list-presentation.component.html',
+  styleUrls: ['./mentor-list-presentation.component.scss'],
+  viewProviders: [MentorListPresenterService],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UserListPresentationComponent implements OnInit {
+export class MentorListPresentationComponent implements OnInit {
 
   @Input() public set userList(value: UserDetails[] | null) {
     if (value) {
       this._userList = value;
-      console.log("heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeelo");
       console.log(this._userList);
     }
   }
@@ -30,17 +30,23 @@ export class UserListPresentationComponent implements OnInit {
 
 
 
-  constructor(private userListPresenterService: UserListPresenterService) {
+  constructor(private mentorListPresenterService: MentorListPresenterService,
+    private router: Router) {
     this.delete = new EventEmitter<number>();
   }
 
   ngOnInit(): void {
-    this.userListPresenterService.delete$.subscribe((id: number) => {
+    this.mentorListPresenterService.delete$.subscribe((id: number) => {
       this.delete.emit(id);
     });
   }
 
   public onDelete(id: number) {
-    this.userListPresenterService.delete(id);
+    this.mentorListPresenterService.delete(id);
+  }
+
+
+  onEdit(id: number) {
+    this.router.navigateByUrl(`mvpMentor/edit/${id}`);
   }
 }

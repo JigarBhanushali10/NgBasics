@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 @Injectable()
 
 
-export class MvpUserService {
+export class MvpMentorService {
 
  
 
@@ -20,12 +20,12 @@ export class MvpUserService {
  
 
   // // service to add user
-    addUser(user:UserDetails): Observable<UserDetails> {
+    addMentor(user:UserDetails): Observable<UserDetails> {
     return this.http.post<UserDetails>(`${this.Link}/UserDetails`,user);
   }
 
   // //  servive to get users list 
-    getUsers(): Observable<UserDetails[]> {
+    getMentors(): Observable<UserDetails[]> {
     return this.http.get<UserDetails[]>(`${this.Link}/UserDetails`);
   }
 
@@ -36,12 +36,12 @@ export class MvpUserService {
     return this.http.get<UserDetails>(`${this.Link}/UserDetails/${id}`);
   }
   // // service to update user .
-  editUser(id:number,user:UserDetails): Observable<UserDetails> {
+  editMentor(id:number,user:UserDetails): Observable<UserDetails> {
     return this.http.put<UserDetails>(`${this.Link}/UserDetails/${id}`,user);
   }
   
   // // service to delete user from list
-    deleteUser(id:number): Observable<UserDetails> {
+    deleteMentor(id:number): Observable<UserDetails> {
     return this.http.delete<UserDetails>(`${this.Link}/UserDetails/${id}`);
   }
 

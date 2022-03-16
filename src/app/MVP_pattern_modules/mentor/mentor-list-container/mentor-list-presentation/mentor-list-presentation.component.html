@@ -1,0 +1,28 @@
+<div class="text-end">
+    
+    <button class="btn btn-primary mb-3" routerLink="/mvpMentor/add">Add</button>
+</div>
+    
+
+<table class="table">
+    <thead class="thead"> 
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone No</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let mentor of userList">
+            <td>{{mentor.id}}</td>
+            <td>{{mentor.firstName}}</td>
+            <td>{{mentor.email}}</td>
+            <td>{{mentor.phoneNo}}</td>
+            <td>
+                <button type="button" class="btn btn-danger" (click)="onDelete(mentor.id)" >Delete</button>
+            
+                <button type="button" class="btn btn-info mx-3" (click)="onEdit(mentor.id)" >Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
