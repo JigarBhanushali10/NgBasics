@@ -51,6 +51,7 @@ const routes: Routes = [
     component:JavascriptComponent
   },
   { path: 'mvpMentor', loadChildren: () => import('./MVP_pattern_modules/mentor/mentor.module').then(m => m.MentorModule) },
+  { path: 'subject', loadChildren: () => import('./features/subject/subject.module').then(m => m.SubjectModule) },
 
   {
     path: '**',
