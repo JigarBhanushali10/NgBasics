@@ -22,8 +22,8 @@ import { CrudService } from './services/crud.service';
   imports: [
     CommonModule,
     UserFormRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,               
+    // ReactiveFormsModule,
+    // HttpClientModule,               
     SharedModule
     
   

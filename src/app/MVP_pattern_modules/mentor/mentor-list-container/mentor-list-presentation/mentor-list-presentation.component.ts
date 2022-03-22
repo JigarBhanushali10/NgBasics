@@ -15,6 +15,7 @@ export class MentorListPresentationComponent implements OnInit {
   @Input() public set userList(value: UserDetails[] | null) {
     if (value) {
       this._userList = value;
+      
       console.log(this._userList);
     }
   }

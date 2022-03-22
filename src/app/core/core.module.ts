@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 
 import { DataBindingRoutingModule } from '../features/data-binding/data-binding-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -19,16 +20,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   imports: [
     CommonModule, 
-   
-    DataBindingRoutingModule
+    DataBindingRoutingModule,
+    HttpClientModule,
 
     
   ],
   exports: [
     HeaderComponent,
     SidenavComponent,
-    FooterComponent,
-    
-  ]
+    FooterComponent,  
+  ],
 })
 export class CoreModule { }

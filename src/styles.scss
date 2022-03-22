@@ -1,5 +1,25 @@
-@import 'assets/scss/style.scss';
+// Project base and component style import
+// Vendor base and component style import
+@import '../src/assets/scss/base/index';
+@import '../src/assets/scss/vendor/bootstrap-base';
+
+@import '../src/assets/scss/vendor/bootstrap-components';
+
+
+// Project Specific Components
+@import '../src/assets/scss/component/index';
+
+// Now other style import
+@import '../src/assets/scss/layout/index';
+
+@import '../src/assets/scss/utilities/index';
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+
+
+
 /* You can add global styles to this file, and also import other style files */
 * {
  
@@ -24,82 +44,7 @@ body {
 
 // app component
 
-// sidenav component scss
 
-.innerSidenav {
-   // background-color: #fff;
-
-  .sidebarHead {
-    transition: 0.6s all;
-    
-    
-  }
-
-  .sidebarBody {
-  
-    scrollbar-gutter: stable;
-   
-   
-    .nav_links {
-      
-    }
-
-    li {
-      // padding: 0.5rem;
-      
-
-      .btn_sidenav {
-     
-      
-        // background-color: #ffffff;
-        
-
-        .icons {
-          // color: #bebfc3;
-     
-        }
-        .links {
-         
-          // transition: 00.6s all;
-         
-        }
-
-        &.btn_sidenav_active {
-          
-          background-color:#0d6efd;
-          color: #ffffff;
-        
-          .icons {
-            color: #ffffff;
-          }
-        }
-        
-      }
-    }
-  }
-}
-
-.profile {
- 
-  .profile_picture {
-   
-    img {
-      // border-radius: 50%;
-      width: 50px;
-      height: 50px;
-    }
-  }
-  .profile_info {
-    padding: 0 1.75rem;
-    .profile_name {
-      font-size: 1.2rem;
-    }
-    .profile_email {
-      font-size: small;
-      opacity: 0.5;
-    }
-  }
-}
 
 #toogleCheckBox:checked ~ .sidenav .links,
 #toogleCheckBox:checked ~ .sidenav .sidebarHead {

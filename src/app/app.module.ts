@@ -8,7 +8,7 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JavascriptComponent } from './features/javascript/javascript.component';
-import { CustomInterceptor } from './interceptor/custom.interceptor';
+import { CustomInterceptor } from './core/interceptor/custom.interceptor';
 
 
 // import { UserFormModule } from './features/user-form/user-form.module';
@@ -25,7 +25,6 @@ import { CustomInterceptor } from './interceptor/custom.interceptor';
     CoreModule,
     AppRoutingModule,
     DataBindingModule,
-    HttpClientModule,
     BrowserAnimationsModule
   ], 
 
@@ -34,6 +33,7 @@ import { CustomInterceptor } from './interceptor/custom.interceptor';
     useClass: CustomInterceptor,
     multi: true
   }],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

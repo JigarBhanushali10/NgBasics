@@ -9,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ReactiveDemoComponent implements OnInit {
 
   genders = ['male', 'female'];
-   signupForm: FormGroup | undefined;
+   signupForm: FormGroup;
     ngOnInit(): void {
       this.signupForm = new FormGroup ({
         userData: new FormGroup ({

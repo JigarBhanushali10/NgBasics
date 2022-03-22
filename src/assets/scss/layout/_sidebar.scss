@@ -1,0 +1,80 @@
+// sidenav component scss
+
+.innerSidenav {
+    // background-color: #fff;
+ 
+   .sidebarHead {
+     transition: 0.6s all;
+     
+     
+   }
+ 
+   .sidebarBody {
+   
+     scrollbar-gutter: stable;
+    
+    
+     .nav_links {
+       
+     }
+ 
+     li {
+       // padding: 0.5rem;
+       
+ 
+       .nav-link {
+      color: $secondary;
+       
+         // background-color: #ffffff;
+         
+ 
+         .icons {
+           // color: #bebfc3;
+      
+         }
+         .links {
+          
+           // transition: 00.6s all;
+          
+         }
+ 
+         &.btn_sidenav_active {
+           
+           background-color:#0d6efd;
+           color: #ffffff;
+         
+           .icons {
+             color: #ffffff;
+           }
+         }
+         
+       }
+       .nav-link:hover{
+         color: $nav-link-hover-color;
+         background-color: $primary;
+       }
+     }
+   }
+ }
+ 
+ .profile {
+  
+   .profile_picture {
+    
+     img {
+       // border-radius: 50%;
+       width: 50px;
+       height: 50px;
+     }
+   }
+   .profile_info {
+     padding: 0 1.75rem;
+     .profile_name {
+       font-size: 1.2rem;
+     }
+     .profile_email {
+       font-size: small;
+       opacity: 0.5;
+     }
+   }
+ }
