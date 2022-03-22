@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DataBindingRoutingModule } from '../features/data-binding/data-binding-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -20,8 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     CommonModule, 
-    DataBindingRoutingModule,
     HttpClientModule,
+    RouterModule
 
     
   ],

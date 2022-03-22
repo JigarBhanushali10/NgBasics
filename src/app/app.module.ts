@@ -24,7 +24,6 @@ import { CustomInterceptor } from './core/interceptor/custom.interceptor';
     BrowserModule,
     CoreModule,
     AppRoutingModule,
-    DataBindingModule,
     BrowserAnimationsModule
   ], 
 
