@@ -1,1 +1,25 @@
-<p>subject-list works!</p>
+<table class="table table-hover">
+    <thead>
+
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>email</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let user of user$ | async; let i = index;">
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.email}}</td>
+            <td>
+                <button type="button" (click)="editItem(user)">Edit</button>
+
+                <button type="button" (click)="deleteItem(user.id)">Delete</button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>

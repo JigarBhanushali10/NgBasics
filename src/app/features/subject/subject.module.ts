@@ -6,6 +6,7 @@ import { SubjectComponent } from './subject.component';
 import { SubjectListComponent } from './subject-list/subject-list.component';
 import { SubjectFormComponent } from './subject-form/subject-form.component';
 import { SubjectService } from './subject.service';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SubjectService } from './subject.service';
   ],
   imports: [
     CommonModule,
-    SubjectRoutingModule
+    SubjectRoutingModule,
+    SharedModule
   ],
   providers:[SubjectService]
 })
