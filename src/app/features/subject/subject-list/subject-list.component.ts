@@ -23,7 +23,7 @@ export class SubjectListComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    this.user$ = this.subjectService.user$;
 
   }
 
