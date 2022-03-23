@@ -3,8 +3,8 @@
 
         <tr>
             <th>name</th>
-            <th>age</th>
             <th>email</th>
+            <th>age</th>
             <th>action</th>
         </tr>
     </thead>
@@ -12,12 +12,12 @@
 
         <tr *ngFor="let user of user$ | async; let i = index;">
             <td>{{user.name}}</td>
-            <td>{{user.age}}</td>
             <td>{{user.email}}</td>
+            <td>{{user.age}}</td>
             <td>
-                <button type="button" (click)="editItem(user)">Edit</button>
+                <button type="button" (click)="editItem(user)" class="btn btn-info">Edit</button>
 
-                <button type="button" (click)="deleteItem(user.id)">Delete</button>
+                <button type="button" (click)="deleteItem(user.id)" class="btn btn-danger mx-3">Delete</button>
 
             </td>
         </tr>

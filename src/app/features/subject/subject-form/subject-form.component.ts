@@ -34,10 +34,10 @@ export class SubjectFormComponent implements OnInit {
   onSubmit(): void {
     if (this.idToEdit) {
       this.subjectService.updateData(this.idToEdit, this.userForm.value);
-      alert("Data updated..");
+      alert("User Updated");
     }else{
       this.subjectService.create(this.userForm.value);
-      alert("Data added..");
+      alert("User Added");
     }
     this.reset();
   }

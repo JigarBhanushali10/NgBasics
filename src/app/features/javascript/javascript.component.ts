@@ -63,7 +63,7 @@ export class JavascriptComponent implements OnInit {
         },
         {
             firstName: "Sneha",
-            company: "1rivet",
+            company: "Google",
             gender: "Female",
             age: 25
         },
@@ -75,7 +75,7 @@ export class JavascriptComponent implements OnInit {
         },
         {
             firstName: "Pooja",
-            company: "1rivet",
+            company: "Microsoft",
             gender: "Female",
             age: 21
         },
@@ -87,7 +87,7 @@ export class JavascriptComponent implements OnInit {
         },
         {
             firstName: "Om",
-            company: "1rivet",
+            company: "Meta",
             gender: "Male",
             age: 22
         },

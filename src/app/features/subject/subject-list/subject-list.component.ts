@@ -14,7 +14,7 @@ export class SubjectListComponent implements OnInit {
   constructor(private subjectService: SubjectService) {
     this.user$ = this.subjectService.user$
     this.user$.subscribe((res) => {
-      console.log(res)
+      // console.log(res)
 
     });
 
@@ -24,6 +24,8 @@ export class SubjectListComponent implements OnInit {
 
   ngOnInit(): void {
     this.user$ = this.subjectService.user$;
+    console.log("Original Array",this.subjectService.NewUsers);
+    
 
   }
 
@@ -34,6 +36,7 @@ export class SubjectListComponent implements OnInit {
   }
 
   deleteItem(id: number): void {
+    alert("User Deleted")
     this.subjectService.deleteData(id);
   }
 

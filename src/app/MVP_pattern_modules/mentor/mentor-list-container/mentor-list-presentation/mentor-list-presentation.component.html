@@ -19,9 +19,9 @@
             <td>{{mentor.email}}</td>
             <td>{{mentor.phoneNo}}</td>
             <td>
+                <button type="button" class="btn btn-info mx-3" (click)="onEdit(mentor.id)" >Edit</button>
                 <button type="button" class="btn btn-danger" (click)="onDelete(mentor.id)" >Delete</button>
             
-                <button type="button" class="btn btn-info mx-3" (click)="onEdit(mentor.id)" >Edit</button>
             </td>
         </tr>
     </tbody>

@@ -38,7 +38,7 @@ export class SubjectService {
   create(item: User) {
     item.id = ++this.nextId;
     this.NewUsers.push(item);
-    console.log("service", this.NewUsers);
+    console.log("New Array", this.NewUsers);
     this._user$.next(this.NewUsers);
   }
 
