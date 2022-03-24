@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { UserDetails } from 'src/app/features/Assesment/users/models/user.model';
+import { Department } from 'src/app/features/employee/model/employee.model';
 import { MvpMentorService } from '../service/mvp-mentor.service';
 
 @Component({
@@ -12,17 +13,21 @@ import { MvpMentorService } from '../service/mvp-mentor.service';
 export class MentorListContainerComponent implements OnInit {
 
   public userList$: Observable<UserDetails[]>
+  public departmentList$: Observable<Department[]>
 
   
 
   constructor(private mvpMentorService: MvpMentorService) {
    
     this.userList$ = new Observable();
+    this.departmentList$ = new Observable();
 
    }
    
   ngOnInit(): void {
-    this.getmentors()
+    this.getmentors();
+    this.getDepartments();
+
 
   }
 
@@ -34,5 +39,8 @@ export class MentorListContainerComponent implements OnInit {
   }
 getmentors(){
   this.userList$ = this.mvpMentorService.getMentors();
+}
+getDepartments(){
+  this.departmentList$ = this.mvpMentorService.getDepartments();
 }
 }

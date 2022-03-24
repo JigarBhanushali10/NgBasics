@@ -1,4 +1,5 @@
 <app-mentor-from-presentation
+[departmentList]="departmentList$ | async"
 (add)="addData($event)"
 (edit)="editData($event)"
 [mentorData]="mentorData$ | async"

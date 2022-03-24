@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { PhoneMaskDirective } from './directives/phone-mask.directive';
 import { DeleteComponent } from './component/delete/delete.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IdToNamePipe } from './pipes/id-to-name.pipe';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 
 
 
 @NgModule({
-  declarations: [PhoneMaskDirective, DeleteComponent],
+  declarations: [PhoneMaskDirective, DeleteComponent, IdToNamePipe],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -18,7 +20,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   exports: [
     PhoneMaskDirective,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    IdToNamePipe,
+    OverlayModule
   ],
 })
 export class SharedModule { }

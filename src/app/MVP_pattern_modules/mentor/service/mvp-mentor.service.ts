@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { UserDetails } from 'src/app/features/Assesment/users/models/user.model';
+import { Department } from 'src/app/features/employee/model/employee.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable()
@@ -45,4 +46,8 @@ export class MvpMentorService {
     return this.http.delete<UserDetails>(`${this.Link}/UserDetails/${id}`);
   }
 
+
+  getDepartments(): Observable<Department[]> {
+    return this.http.get<Department[]>(`${this.Link}/Department`);
+  }
 }

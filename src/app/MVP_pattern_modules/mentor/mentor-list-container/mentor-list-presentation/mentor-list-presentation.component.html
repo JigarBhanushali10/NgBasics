@@ -1,6 +1,8 @@
 <div class="text-end">
-    
-    <button class="btn btn-primary mb-3" routerLink="/mvpMentor/add">Add</button>
+    <button class="btn btn-primary m-3"  (click)="openFilter()">
+Filter
+    </button>
+    <button class="btn btn-primary m-3" routerLink="/mvpMentor/add">Add</button>
 </div>
     
 
@@ -10,6 +12,8 @@
         <th>Name</th>
         <th>Email</th>
         <th>Phone No</th>
+        <th>Gender</th>
+        <th>Department</th>
         <th>Action</th>
     </thead>
     <tbody>
@@ -18,6 +22,8 @@
             <td>{{mentor.firstName}}</td>
             <td>{{mentor.email}}</td>
             <td>{{mentor.phoneNo}}</td>
+            <td>{{mentor.gender}}</td>
+            <td>{{ mentor.department | idToName : departmentList }}</td>
             <td>
                 <button type="button" class="btn btn-info mx-3" (click)="onEdit(mentor.id)" >Edit</button>
                 <button type="button" class="btn btn-danger" (click)="onDelete(mentor.id)" >Delete</button>
@@ -26,3 +32,6 @@
         </tr>
     </tbody>
 </table>
+
+
+

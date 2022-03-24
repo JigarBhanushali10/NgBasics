@@ -105,7 +105,5 @@ export class EmployeeFormComponent implements OnInit {
 
 
 }
-function input() {
-  throw new Error('Function not implemented.');
-}
+
 

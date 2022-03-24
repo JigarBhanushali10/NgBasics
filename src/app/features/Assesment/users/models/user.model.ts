@@ -1,3 +1,5 @@
+import { Department } from "src/app/features/employee/model/employee.model"
+
 export interface Offices{
     id: number,
     name: string
@@ -16,4 +18,6 @@ export interface UserDetails{
     phoneNo: number,
     clientName:string,
     office:string,
+    department: number,
+    gender: string
 }

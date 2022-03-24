@@ -8,6 +8,8 @@ import { MentorFromPresentationComponent } from './mentor-form-container/mentor-
 import { MentorRoutingModule } from './mentor-routing.module';
 import { MvpMentorService } from './service/mvp-mentor.service';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MentorFilterPresentationComponent } from './mentor-list-container/mentor-list-presentation/mentor-filter-presentation/mentor-filter-presentation.component';
+import { MentorFilterPresenterService } from './mentor-list-container/mentor-list-presentation/mentor-filter-presenter/mentor-filter-presenter.service';
 
 
 
@@ -17,14 +19,16 @@ import { SharedModule } from 'src/app/shared/shared.module';
     MentorListContainerComponent,
     MentorFormContainerComponent,
     MentorFromPresentationComponent,
-    MentorListPresentationComponent
+    MentorListPresentationComponent,
+    MentorFilterPresentationComponent,
+    
   ],
   imports: [
     CommonModule,
     MentorRoutingModule,
-    SharedModule
+    SharedModule,
   ],
  
-  providers:[MvpMentorService]
+  providers:[MvpMentorService,MentorFilterPresenterService]
 })
 export class MentorModule { }

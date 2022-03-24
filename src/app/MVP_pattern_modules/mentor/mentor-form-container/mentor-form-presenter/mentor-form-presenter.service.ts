@@ -24,8 +24,11 @@ if(mentorForm.valid){
   buildForm() {
     return this.fb.group({
       firstName: ['', Validators.required],
-      email: ['', Validators.required ],
-      phoneNo: ['', Validators.required]
+      email: ['', Validators.required],
+      phoneNo: ['', Validators.required],
+      dateOfEmployment: [''],
+      gender: [''],
+      department: ['']
     })
   }
 }

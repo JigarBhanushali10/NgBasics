@@ -13,7 +13,7 @@
             <!-- <form [formGroup]="employeeForm"  (ngSubmit)="saveEmployee()"> -->
             <div class="firstname col-6">
                 <label for="firstname">Enter your Name:</label>
-                <input type="text" placeholder="Name" id="firstname" class="form-control" formControlName="firstName">
+                <input type="text" placeholder="Name" id="firstame" class="form-control" formControlName="firstName">
                 <!-- <div *ngIf="getValue.get('firstname')?.touched">
                     <span class="text-danger"
                         *ngIf="getValue.get('firstname')?.errors && getValue.get('firstname')?.errors?.['required']" style="color: red;">
@@ -28,6 +28,25 @@
             <div class="phoneNo col-6">
                 <label for="phoneNo">Enter your Phone Number:</label>
                 <input type="number" placeholder="987-745-4564"  id="phoneNo" class="form-control" formControlName="phoneNo">
+            </div>
+            <div class="gender">
+                <label for="">Gender:</label>
+                <div>
+                    <label for="male">Male</label>
+                <input type="radio" name="gender" value="male" id="male" formControlName="gender">
+                
+                    <label for="female">Female</label>
+                <input type="radio" name="gender" value="female" id="female" formControlName="gender">
+                </div>
+                
+                
+            </div>
+            <div class="department">
+                <label for="department">Choose Department</label>
+                <select name="department" formControlName="department" id="department">
+                    <option disabled    >select</option>
+                    <option *ngFor="let departmentValue of departmentList" [value]="departmentValue.id">{{departmentValue.name}}</option>
+                </select>
             </div>
             <button type="submit" class="btn btn-success mt-3">Submit</button>
             <!-- <button type="button" (click)="onReset()" class="btn btn-reset">Cancel</button> -->

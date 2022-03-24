@@ -1,0 +1,37 @@
+<div class="bg-white h-100 ">
+{{filteredForm.value | json}}
+    <button type="button" (click)="Onclose()" class="btn btn-danger">X</button>
+
+    <form [formGroup]="filteredForm" (ngSubmit)="onSubmit()">
+        <div class="d-flex m-3">
+
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                
+                <input type="text" id="name" class="form-control col-6" formControlName="name">
+            </div>
+        </div>
+<div class="m-3">
+
+    <select class="form-select" aria-label="Default select example" formControlName="gender">
+        <option selected>Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        
+    </select>
+</div>
+        <div class="d-flex m-3">
+            Select Departments:
+
+            <div class="form-check mx-3"*ngFor="let departmentValue of departmentList">
+                <label for="{{departmentValue.name}}">{{departmentValue.name}}
+                    <input class="form-check-input" type="checkbox"  [value]="departmentValue.id" id="{{departmentValue.name}}" name="department" formControlName="department">
+                </label>
+                <!-- <option *ngFor="let departmentValue of departmentList" [value]="departmentValue.id">{{departmentValue.name}}</option> -->
+
+            </div>
+            
+        </div>
+        <button type="submit" class="btn btn-primary"  >Apply</button>
+    </form>
+</div>
