@@ -36,7 +36,7 @@ export class NewassesmentComponent implements OnInit, AfterViewInit {
   }
 
   selectedData(no: Number): void{
-    debugger
+    // debugger
     let index = this.selectDataArray.indexOf(no);
     if(index == -1){
       this.selectDataArray.push(no);
@@ -47,7 +47,7 @@ export class NewassesmentComponent implements OnInit, AfterViewInit {
   }
 
   deletFunc(): void{
-    debugger
+    // debugger
     this.selectDataArray.forEach((no)=>{
       this.crudData.splice(this.crudData.indexOf(no),1);
       this.selectDataArray.splice(Number(no),1);

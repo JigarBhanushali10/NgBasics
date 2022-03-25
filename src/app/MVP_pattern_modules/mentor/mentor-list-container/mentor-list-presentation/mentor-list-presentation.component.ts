@@ -1,17 +1,16 @@
-import { isNgTemplate } from '@angular/compiler';
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserDetails } from 'src/app/features/Assesment/users/models/user.model';
 import { Department } from 'src/app/features/employee/model/employee.model';
 import { MentorListPresenterService } from '../mentor-list-presenter/mentor-list-presenter.service';
-import { MentorFilterPresenterService } from './mentor-filter-presenter/mentor-filter-presenter.service';
 
 @Component({
   selector: 'app-mentor-list-presentation',
   templateUrl: './mentor-list-presentation.component.html',
   styleUrls: ['./mentor-list-presentation.component.scss'],
   viewProviders: [MentorListPresenterService],
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MentorListPresentationComponent implements OnInit {
   filteredValue: any;
@@ -62,14 +61,17 @@ export class MentorListPresentationComponent implements OnInit {
   //   }
   // } 
 
-  constructor(private mentorListPresenterService: MentorListPresenterService,
-    private router: Router) {
+  constructor(
+    private mentorListPresenterService: MentorListPresenterService,
+    private router: Router,
+    private changeDetectorRef: ChangeDetectorRef) {
     this.delete = new EventEmitter<number>();
 
     this.mentorListPresenterService.filteredData$.subscribe((filteredData: UserDetails[]) => {
       
       this._userList = filteredData;
       console.log("from tation1",this._userList);
+      this.changeDetectorRef.markForCheck()
     });
     
     

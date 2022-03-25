@@ -73,6 +73,10 @@ export class MentorListPresenterService {
       console.log(user.gender);
       return user.gender?.toLowerCase() == filters.value.gender?.toLowerCase();
     })
+    list = list.filter(user => {
+      console.log(user.firstName);
+      return user.firstName?.toLowerCase().includes(filters.value.name?.toLowerCase());
+    })
     console.log(list);
     this.filteredData(list);
   }

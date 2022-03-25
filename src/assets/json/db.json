@@ -193,6 +193,15 @@
       "dateOfEmployment": "",
       "gender": "female",
       "department": "",
+      "id": 1
+    },
+    {
+      "firstName": "asfsa",
+      "email": "sd@cs.com",
+      "phoneNo": 41,
+      "dateOfEmployment": "",
+      "gender": "female",
+      "department": "",
       "id": 2
     },
     {
@@ -255,7 +264,7 @@
       "phoneNo": 453,
       "dateOfEmployment": "",
       "gender": "male",
-      "department": "",
+      "department": "1",
       "id": 10
     },
     {
