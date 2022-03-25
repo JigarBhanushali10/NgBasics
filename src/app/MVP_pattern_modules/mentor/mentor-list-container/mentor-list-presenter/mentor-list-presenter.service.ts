@@ -12,34 +12,35 @@ export class MentorListPresenterService {
   // filteredData: UserDetails
   private _delete: Subject<number>;
   public delete$: Observable<number>;
- 
-  private _filteredData: Subject<UserDetails>;
-  
-  public filteredData$: Observable<UserDetails>;
-    
+
+  private _filteredData: Subject<UserDetails[]>;
+
+  public filteredData$: Observable<UserDetails[]>;
+
   constructor(private overlay: Overlay) {
-    
+
     this._delete = new Subject();
 
     this.delete$ = this._delete.asObservable();
-    
+
     this._filteredData = new Subject();
 
     this.filteredData$ = this._filteredData.asObservable();
-    
-   }
-   
-   
-   public delete(id: number) {
-    this._delete.next(id);}
+
+  }
 
 
-   public filteredData(filteredData: UserDetails) {
+  public delete(id: number) {
+    this._delete.next(id);
+  }
+
+
+  public filteredData(filteredData: UserDetails[]) {
     this._filteredData.next(filteredData);
   }
-public componentRef :ComponentRef<MentorFilterPresentationComponent>
+  public componentRef: ComponentRef<MentorFilterPresentationComponent>
 
-public overlayRef : OverlayRef
+  public overlayRef: OverlayRef
   displayOverlay(departmentList: Department[], userList: UserDetails[]) {
     this.overlayRef = this.overlay.create({
       hasBackdrop: true,
@@ -55,27 +56,28 @@ public overlayRef : OverlayRef
 
     this.componentRef.instance.departmentList = departmentList;
 
-   this.componentRef.instance.filterFormData.subscribe((data)=>{
-     this.myfilter(userList, data)
-     
-    // console.log("from list presentor",data.value)
-   })
+    this.componentRef.instance.filterFormData.subscribe((data) => {
+      this.myfilter(userList, data)
+
+      // console.log("from list presentor",data.value)
+    })
     this.componentRef.instance.close.subscribe(() => {
-      this.overlayRef.detach(); 
+      this.overlayRef.detach();
     });
   }
 
 
-myfilter(list: UserDetails[], filters: any){
-  console.log(filters.value);
-  list = list.filter(user => {
-    console.log(user.gender);
-    return user.gender?.toLowerCase() == filters.value.gender?.toLowerCase();
-  })
-  console.log(list);
-}
-  getfilterValue(data:any){
-    console.log("from list presentor",data)
-    
+  myfilter(list: UserDetails[], filters: any) {
+    console.log(filters.value);
+    list = list.filter(user => {
+      console.log(user.gender);
+      return user.gender?.toLowerCase() == filters.value.gender?.toLowerCase();
+    })
+    console.log(list);
+    this.filteredData(list);
+  }
+  getfilterValue(data: any) {
+    console.log("from list presentor", data)
+
   }
 }

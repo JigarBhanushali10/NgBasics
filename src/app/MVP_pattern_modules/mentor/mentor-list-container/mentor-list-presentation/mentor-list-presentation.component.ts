@@ -11,14 +11,16 @@ import { MentorFilterPresenterService } from './mentor-filter-presenter/mentor-f
   templateUrl: './mentor-list-presentation.component.html',
   styleUrls: ['./mentor-list-presentation.component.scss'],
   viewProviders: [MentorListPresenterService],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MentorListPresentationComponent implements OnInit {
   filteredValue: any;
-  filteredUsers : UserDetails
-
+  
   @Input() public set userList(value: UserDetails[] | null) {
     if (value) {
+      if (this._userListOrig == null) {
+        this._userListOrig = value;
+      }
       this._userList = value;
 
       console.log(this._userList);
@@ -45,39 +47,39 @@ export class MentorListPresentationComponent implements OnInit {
 
   @Output() public delete: EventEmitter<number>;
 
+  private _userListOrig: UserDetails[] | null = null;
   private _userList: UserDetails[];
+  filteredUsers : UserDetails[]
 
   private _departmentsList: Department[];
 
-  constructor(private mentorListPresenterService: MentorListPresenterService, private filterService: MentorFilterPresenterService,
+
+  // set NewfilteredUsers(value: UserDetails[] | null) {
+  //   if (value) {
+  //     this.filteredUsers = value;
+
+  //     console.log(hithis.filteredUsers);
+  //   }
+  // } 
+
+  constructor(private mentorListPresenterService: MentorListPresenterService,
     private router: Router) {
     this.delete = new EventEmitter<number>();
 
-    this.mentorListPresenterService.filteredData$.subscribe((filteredData: UserDetails) => {
-      this.filteredUsers = filteredData
-      console.log("from tation",filteredData);
+    this.mentorListPresenterService.filteredData$.subscribe((filteredData: UserDetails[]) => {
       
-  
+      this._userList = filteredData;
+      console.log("from tation1",this._userList);
     });
-    console.log("from tation",this.filteredUsers);
+    
     
   }
-
+  
   ngOnInit(): void {
     this.mentorListPresenterService.delete$.subscribe((id: number) => {
       this.delete.emit(id);
     });
-
-
-
-
-    // this.filterService.filterForm$.subscribe((res) => {
-    //   // this.myfilter(res);
-    //   console.log("msntor list  tation",res);
-    //   this.filteredValue = res
-
-    // })
-
+    
   }
 
   public onDelete(id: number) {
@@ -89,14 +91,12 @@ export class MentorListPresentationComponent implements OnInit {
     this.router.navigateByUrl(`mvpMentor/edit/${id}`);
   }
 
-//   filteredvalue(data:any) {
-// this.mentorListPresenterService.getfilterValue(data)
-//   }
+
   openFilter() {
-    this.mentorListPresenterService.displayOverlay(this._departmentsList,this._userList)
+    if (this._userListOrig) {
+      this.mentorListPresenterService.displayOverlay(this._departmentsList,this._userListOrig)
+    }
 
   }
-  // myfilter(filters:any){
-  //   this._userList = this.mentorListPresenterService
-  // }
+ 
 }
