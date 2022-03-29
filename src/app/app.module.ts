@@ -9,6 +9,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JavascriptComponent } from './features/javascript/javascript.component';
 import { CustomInterceptor } from './core/interceptor/custom.interceptor';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 // import { UserFormModule } from './features/user-form/user-form.module';
@@ -24,7 +25,8 @@ import { CustomInterceptor } from './core/interceptor/custom.interceptor';
     BrowserModule,
     CoreModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DragDropModule
   ], 
 
   providers: [{

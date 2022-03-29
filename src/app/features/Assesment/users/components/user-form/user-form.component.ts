@@ -35,10 +35,10 @@ export class UserFormComponent implements OnInit {
 
   public userBuildForm() {
     this.userForm = this.userFormBuilder.group({
-      id: ['',],
+      id: ['' ],
       firstName: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]],
       lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      email: ['', [Validators.required, Validators.email]],
       phoneNo: ['', Validators.required],
       clientName: ['', Validators.required],
       office: ['', Validators.required],
@@ -71,7 +71,10 @@ export class UserFormComponent implements OnInit {
 
     }
     else {
+      
       this.validateAllFormFields(this.userForm);
+      console.log("form is invalid");
+      
     }
 
 

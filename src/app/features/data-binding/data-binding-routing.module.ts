@@ -6,7 +6,8 @@ import { ParentComponent } from './parent/parent.component';
 import { Parent2Component } from './parent2/parent2.component';
 
 const routes: Routes = [
-  {path: 'data-binding' , component: ParentComponent},
+  {
+    path: '' , component: ParentComponent},
   
 ];
 

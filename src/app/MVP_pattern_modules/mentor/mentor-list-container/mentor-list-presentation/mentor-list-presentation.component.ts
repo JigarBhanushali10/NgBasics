@@ -14,7 +14,7 @@ import { MentorListPresenterService } from '../mentor-list-presenter/mentor-list
 })
 export class MentorListPresentationComponent implements OnInit {
   filteredValue: any;
-  
+
   @Input() public set userList(value: UserDetails[] | null) {
     if (value) {
       if (this._userListOrig == null) {
@@ -48,7 +48,7 @@ export class MentorListPresentationComponent implements OnInit {
 
   private _userListOrig: UserDetails[] | null = null;
   private _userList: UserDetails[];
-  filteredUsers : UserDetails[]
+  filteredUsers: UserDetails[]
 
   private _departmentsList: Department[];
 
@@ -68,20 +68,20 @@ export class MentorListPresentationComponent implements OnInit {
     this.delete = new EventEmitter<number>();
 
     this.mentorListPresenterService.filteredData$.subscribe((filteredData: UserDetails[]) => {
-      
+
       this._userList = filteredData;
-      console.log("from tation1",this._userList);
+      console.log("from tation1", this._userList);
       this.changeDetectorRef.markForCheck()
     });
-    
-    
+
+
   }
-  
+
   ngOnInit(): void {
     this.mentorListPresenterService.delete$.subscribe((id: number) => {
       this.delete.emit(id);
     });
-    
+
   }
 
   public onDelete(id: number) {
@@ -96,9 +96,26 @@ export class MentorListPresentationComponent implements OnInit {
 
   openFilter() {
     if (this._userListOrig) {
-      this.mentorListPresenterService.displayOverlay(this._departmentsList,this._userListOrig)
+      this.mentorListPresenterService.displayOverlay(this._departmentsList, this._userListOrig)
     }
 
   }
- 
+
+
+
+
+  isDesc: boolean = false;
+  column: string = 'id';
+
+  sort(column: string) {
+    if (this.column === column) {
+      this.isDesc = !this.isDesc;
+    } else {
+      this.column = column;
+      this.isDesc = false;
+    }
+    this.mentorListPresenterService.sort(this.column as keyof UserDetails, this._userList, this.isDesc)
+}
+
+  
 }

@@ -1,4 +1,6 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 export class ok {
     firstName: string;
@@ -174,5 +176,7 @@ export class JavascriptComponent implements OnInit {
     }
 
 
-
+    drop(event: CdkDragDrop<ok[]>) {
+        moveItemInArray(this.array2, event.previousIndex, event.currentIndex);
+      }
 }

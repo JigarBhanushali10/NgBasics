@@ -68,4 +68,8 @@ textInput:string=""
 
 }
 preview:string=""
+
+fromChild2(value: string){
+alert(value)
+}
 }

@@ -1,4 +1,4 @@
-<div class="formComponentContainer" style="width: 100%" [formGroup]="userForm" (ngSubmit)="saveUser()">
+<div class="formComponentContainer" style="width: 100%" >
 
 
 
@@ -32,8 +32,8 @@
     <!-- Start:user form -->
     {{this.userForm.value | json}}
 
-    <div class="Userform" *ngIf="showForm">
-        <form   >
+    <div class="Userform" *ngIf="showForm" >
+        <form [formGroup]="userForm" (ngSubmit)="saveUser()">
             <div class="form-row d-flex" >
                 <div class="form_col">
                     <input type="text" class="form-control" id="firsttName" placeholder="First Name" name="firsttName"

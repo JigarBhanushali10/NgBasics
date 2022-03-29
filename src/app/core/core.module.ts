@@ -9,6 +9,7 @@ import { DataBindingRoutingModule } from '../features/data-binding/data-binding-
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -22,7 +23,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule, 
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    SharedModule
 
     
   ],

@@ -1,4 +1,4 @@
-<table class="table table-hover mb-3">
+<table class="table table-hover mb-3" cdkDropList (cdkDropListDropped)="drop($event)">
     <thead>
         <tr class="table-dark">
             <th>Sno.</th>
@@ -17,7 +17,7 @@
     </thead>
     <tbody>
         
-        <tr *ngFor="let user of array2 ; let i = index" class="table-primary">
+        <tr *ngFor="let user of array2 ; let i = index" class="table-primary" cdkDrag>
             
             <td>{{i+1}}</td>
             <td>

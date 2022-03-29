@@ -123,6 +123,16 @@
       "gender": "male",
       "department": "",
       "id": 11
+    },
+    {
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "phoneNo": "",
+      "dateOfEmployment": "",
+      "gender": "",
+      "department": "",
+      "id": 12
     }
   ],
   "ResumeData": [
@@ -183,6 +193,131 @@
         }
       ],
       "id": 2
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "designation": "",
+      "email": "",
+      "phoneNo": "",
+      "technicalSkills": [
+        {
+          "skillName": ""
+        },
+        {
+          "skillName": ""
+        },
+        {
+          "skillName": ""
+        },
+        {
+          "skillName": ""
+        },
+        {
+          "skillName": ""
+        },
+        {
+          "skillName": ""
+        },
+        {
+          "skillName": ""
+        },
+        {
+          "skillName": ""
+        },
+        {
+          "skillName": ""
+        },
+        {
+          "skillName": ""
+        },
+        {
+          "skillName": ""
+        },
+        {
+          "skillName": ""
+        },
+        {
+          "skillName": ""
+        }
+      ],
+      "experience": [
+        {
+          "companyName": "",
+          "designation": "",
+          "description": "",
+          "startYear": "",
+          "endYear": ""
+        },
+        {
+          "companyName": "",
+          "designation": "",
+          "description": "",
+          "startYear": "",
+          "endYear": ""
+        },
+        {
+          "companyName": "",
+          "designation": "",
+          "description": "",
+          "startYear": "",
+          "endYear": ""
+        },
+        {
+          "companyName": "",
+          "designation": "",
+          "description": "",
+          "startYear": "",
+          "endYear": ""
+        },
+        {
+          "companyName": "",
+          "designation": "",
+          "description": "",
+          "startYear": "",
+          "endYear": ""
+        },
+        {
+          "companyName": "",
+          "designation": "",
+          "description": "",
+          "startYear": "",
+          "endYear": ""
+        }
+      ],
+      "education": [
+        {
+          "university": "",
+          "course": "",
+          "grade": ""
+        },
+        {
+          "university": "",
+          "course": "",
+          "grade": ""
+        },
+        {
+          "university": "",
+          "course": "",
+          "grade": ""
+        },
+        {
+          "university": "",
+          "course": "",
+          "grade": ""
+        },
+        {
+          "university": "",
+          "course": "",
+          "grade": ""
+        },
+        {
+          "university": "",
+          "course": "",
+          "grade": ""
+        }
+      ],
+      "id": 3
     }
   ],
   "UserDetails": [
@@ -214,24 +349,6 @@
       "id": 3
     },
     {
-      "firstName": "edfsaf",
-      "email": "asd@ad.com",
-      "phoneNo": 35,
-      "dateOfEmployment": "",
-      "gender": "female",
-      "department": "",
-      "id": 5
-    },
-    {
-      "firstName": "saaa",
-      "email": "akjsbd@kas.com",
-      "phoneNo": 74,
-      "dateOfEmployment": "",
-      "gender": "male",
-      "department": "",
-      "id": 6
-    },
-    {
       "firstName": "gfghgfdnb",
       "email": "as@ds.com",
       "phoneNo": 45345,
@@ -239,15 +356,6 @@
       "gender": "female",
       "department": "",
       "id": 7
-    },
-    {
-      "firstName": "45345",
-      "email": "453453",
-      "phoneNo": 453453,
-      "dateOfEmployment": "",
-      "gender": "male",
-      "department": "",
-      "id": 8
     },
     {
       "firstName": "53",
@@ -286,13 +394,31 @@
       "id": 12
     },
     {
-      "firstName": "hujkl",
-      "email": "hjkh",
-      "phoneNo": 7989,
-      "dateOfEmployment": "",
-      "gender": "male",
-      "department": "2",
-      "id": 13
+      "id": 13,
+      "firstName": "jigar",
+      "lastName": "123",
+      "email": "as@ds.com",
+      "phoneNo": 56,
+      "clientName": "2",
+      "office": "2"
+    },
+    {
+      "id": 14,
+      "firstName": "jigar",
+      "lastName": "bhanushali",
+      "email": "as@ds.com",
+      "phoneNo": 9876,
+      "clientName": "2",
+      "office": "2"
+    },
+    {
+      "id": 15,
+      "firstName": "jigar",
+      "lastName": "bhanushali",
+      "email": "asd@aa.com",
+      "phoneNo": 54,
+      "clientName": "1",
+      "office": "1"
     }
   ],
   "Offices": [

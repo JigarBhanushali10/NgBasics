@@ -1,4 +1,4 @@
 <p>child2 works!</p>
-<input type="text" value="{{fromChild2}}" placeholder="">
+<input type="text" value="{{fromChild2}}" placeholder="" #child2>
 
-<button (click)="clickme()">click</button>
+<button (click)="clickme(child2.value)">click</button>

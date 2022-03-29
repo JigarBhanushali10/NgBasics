@@ -69,14 +69,18 @@ export class MentorListPresenterService {
 
   myfilter(list: UserDetails[], filters: any) {
     console.log(filters.value);
-    list = list.filter(user => {
-      console.log(user.gender);
-      return user.gender?.toLowerCase() == filters.value.gender?.toLowerCase();
-    })
-    list = list.filter(user => {
-      console.log(user.firstName);
-      return user.firstName?.toLowerCase().includes(filters.value.name?.toLowerCase());
-    })
+    if (filters.value.gender) {
+      list = list.filter(user => {
+        console.log(user.gender);
+        return user.gender?.toLowerCase() == filters.value.gender.toLowerCase();
+      })
+    }
+    if (filters.value.name) {
+      list = list.filter(user => {
+        console.log(user.firstName);
+        return user.firstName?.toLowerCase().includes(filters.value.name.toLowerCase());
+      })
+    }
     console.log(list);
     this.filteredData(list);
   }
@@ -84,4 +88,25 @@ export class MentorListPresenterService {
     console.log("from list presentor", data)
 
   }
+
+
+
+  sort(property: keyof UserDetails, userList: UserDetails[], isDesc: boolean) {
+
+    //change the direction    
+    let direction = isDesc ? -1 : 1;
+
+    userList.sort(function (a, b) {
+
+      if (a[property] < b[property]) {
+        return -1 * direction;
+      }
+      else if (a[property] > b[property]) {
+        return 1 * direction;
+      }
+      else {
+        return 0;
+      }
+    });
+  };
 }

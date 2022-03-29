@@ -12,6 +12,10 @@ const routes: Routes = [
 
   },
   {
+    path: 'data-binding',
+    loadChildren: () => import('../app/features/data-binding/data-binding.module').then(m => m.DataBindingModule)
+  },
+  {
     path: 'directives',
     loadChildren: () => import('../app/features/directives/directives.module').then(m => m.DirectivesModule)
   },

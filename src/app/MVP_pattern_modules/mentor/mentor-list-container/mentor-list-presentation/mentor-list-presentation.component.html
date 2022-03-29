@@ -8,12 +8,12 @@ Filter
 
 <table class="table table-striped table-hover">
     <thead class="thead"> 
-        <th>Id</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone No</th>
-        <th>Gender</th>
-        <th>Department</th>
+        <th (click)="sort('id')">Id</th>
+        <th (click)="sort('firstName')">Name</th>
+        <th (click)="sort('email')">Email</th>
+        <th (click)="sort('phoneNo')">Phone No</th>
+        <th (click)="sort('gender')">Gender</th>
+        <th (click)="sort('department')">Department</th>
         <th>Action</th>
     </thead>
     <tbody>
