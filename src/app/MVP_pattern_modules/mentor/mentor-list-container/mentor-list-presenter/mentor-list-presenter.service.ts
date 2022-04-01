@@ -41,6 +41,8 @@ export class MentorListPresenterService {
   public componentRef: ComponentRef<MentorFilterPresentationComponent>
 
   public overlayRef: OverlayRef
+
+  
   displayOverlay(departmentList: Department[], userList: UserDetails[]) {
     this.overlayRef = this.overlay.create({
       hasBackdrop: true,
@@ -94,14 +96,14 @@ export class MentorListPresenterService {
   sort(property: keyof UserDetails, userList: UserDetails[], isDesc: boolean) {
 
     //change the direction    
-    let direction = isDesc ? -1 : 1;
+    let direction = isDesc ? 1 : -1;
 
     userList.sort(function (a, b) {
 
-      if (a[property] < b[property]) {
+      if (a[property] > b[property]) {
         return -1 * direction;
       }
-      else if (a[property] > b[property]) {
+      else if (a[property] < b[property]) {
         return 1 * direction;
       }
       else {

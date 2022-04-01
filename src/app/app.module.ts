@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataBindingModule } from './features/data-binding/data-binding.module';
 import { CoreModule } from './core/core.module';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {  HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JavascriptComponent } from './features/javascript/javascript.component';
 import { CustomInterceptor } from './core/interceptor/custom.interceptor';

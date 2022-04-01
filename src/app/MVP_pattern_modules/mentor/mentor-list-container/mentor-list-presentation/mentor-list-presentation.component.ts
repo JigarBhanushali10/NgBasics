@@ -83,6 +83,7 @@ export class MentorListPresentationComponent implements OnInit {
     });
 
   }
+  
 
   public onDelete(id: number) {
     this.mentorListPresenterService.delete(id);
@@ -114,7 +115,8 @@ export class MentorListPresentationComponent implements OnInit {
       this.column = column;
       this.isDesc = false;
     }
-    this.mentorListPresenterService.sort(this.column as keyof UserDetails, this._userList, this.isDesc)
+    this.mentorListPresenterService.sort(<keyof UserDetails>this.column, this._userList, this.isDesc)
+    // this.mentorListPresenterService.sort(this.column as keyof UserDetails, this._userList, this.isDesc)
 }
 
   

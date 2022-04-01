@@ -1,35 +1,39 @@
-<div class="list_container">
+<div class="list_container h-100 overflow-hidden">
 
-    <table class="userList">
-        <thead>
-            <tr class="table_head">
+    <div class="h-100 overflow-auto">
 
-                <th class="table-cell">First Name</th>
-                <th class="table-cell">Last Name</th>
-                <th class="table-cell">Client Name</th>
-                <th class="table-cell">Email</th>
-                <th class="table-cell">Office</th>
-                <th class="table-cell">Contact Number</th>
-                <th class="table-cell">Action</th>
-            </tr>
-        </thead>
+        <table class="userList position-relative">
+            <thead class="position-sticky top-0">
+                <tr class="table_head ">
 
-        <tbody>
+                    <th class="table-cell">First Name</th>
+                    <th class="table-cell">Last Name</th>
+                    <th class="table-cell">Client Name</th>
+                    <th class="table-cell">Email</th>
+                    <th class="table-cell">Office</th>
+                    <th class="table-cell">Contact Number</th>
+                    <th class="table-cell">Action</th>
+                </tr>
+            </thead>
 
-            <tr *ngFor="let user of userDetails" class="table_body">
-                <td class="table-cell">{{user.firstName}}</td>
-                <td class="table-cell">{{user.lastName}}</td>
-                <td class="table-cell">{{user.clientName}}</td>
-                <td class="table-cell">{{user.email}}</td>
-                <td class="table-cell">{{user.office}}</td>
-                <td class="table-cell">{{user.phoneNo}}</td>
-                <td class="table-cell">
-                    <button class="btn btn-info btnSize" type="button" (click)="editUser(user.id)">Edit</button>
+            <tbody>
 
-                    <button class="btn btn-danger " type="button" (click)="deleteUser(user.id)">Delete</button>
-                    <!-- <button class="btn btn-danger " type="button" >Delete</button> -->
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                <tr *ngFor="let user of userDetails" class="table_body">
+                    <td class="table-cell">{{user.firstName}}</td>
+                    <td class="table-cell">{{user.lastName}}</td>
+                    <td class="table-cell">{{user.clientName}}</td>
+                    <td class="table-cell">{{user.email}}</td>
+                    <td class="table-cell">{{user.office}}</td>
+                    <td class="table-cell">{{user.phoneNo}}</td>
+                    <td class="table-cell">
+                        <button class="btn btn-info btnSize" type="button" (click)="editUser(user.id)">Edit</button>
+
+                        <button class="btn btn-danger " type="button" (click)="deleteUser(user.id)">Delete</button>
+                        <!-- <button class="btn btn-danger " type="button" >Delete</button> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </div>

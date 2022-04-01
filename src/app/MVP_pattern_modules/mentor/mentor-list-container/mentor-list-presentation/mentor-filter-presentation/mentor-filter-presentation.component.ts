@@ -44,14 +44,14 @@ export class MentorFilterPresentationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  Onclose() {
+  onClose() {
     this.close.emit();
 
   }
 
   onSubmit() {
     this.filterService.submitForm(this.filteredForm)
-    this.close.emit();
+    this.onClose()
     this.filterFormData.emit(this.filteredForm);
 
   }

@@ -1,37 +1,41 @@
-<div class="text-end">
-    <button class="btn btn-primary m-3"  (click)="openFilter()">
-Filter
-    </button>
-    <button class="btn btn-primary m-3" routerLink="/mvpMentor/add">Add</button>
+<div class="h-100 overflow-hidden">
+
+    <div class="text-end">
+        <button class="btn btn-primary m-3" (click)="openFilter()">
+            Filter
+        </button>
+        <button class="btn btn-primary m-3" routerLink="/mvpMentor/add">Add</button>
+    </div>
+
+    <div class="h-100 overflow-auto">
+
+        <table class="table table-striped table-hover table-responsive position-relative">
+            <thead class="thead position-sticky top-0 bg-white">
+                <th (click)="sort('id')">Id</th>
+                <th (click)="sort('firstName')">Name</th>
+                <th (click)="sort('email')">Email</th>
+                <th>Phone No</th>
+                <th (click)="sort('gender')">Gender</th>
+                <th (click)="sort('department')">Department</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let mentor of userList">
+                    <td>{{mentor.id}}</td>
+                    <td>{{mentor.firstName}}</td>
+                    <td>{{mentor.email}}</td>
+                    <td>{{mentor.phoneNo}}</td>
+                    <td>{{mentor.gender}}</td>
+                    <td>{{ mentor.department | idToName : departmentList }}</td>
+                    <td>
+                        <button type="button" class="btn btn-info mx-3" (click)="onEdit(mentor.id)">Edit</button>
+                        <button type="button" class="btn btn-danger" (click)="onDelete(mentor.id)">Delete</button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
 </div>
-    
-
-<table class="table table-striped table-hover">
-    <thead class="thead"> 
-        <th (click)="sort('id')">Id</th>
-        <th (click)="sort('firstName')">Name</th>
-        <th (click)="sort('email')">Email</th>
-        <th (click)="sort('phoneNo')">Phone No</th>
-        <th (click)="sort('gender')">Gender</th>
-        <th (click)="sort('department')">Department</th>
-        <th>Action</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let mentor of userList">
-            <td>{{mentor.id}}</td>
-            <td>{{mentor.firstName}}</td>
-            <td>{{mentor.email}}</td>
-            <td>{{mentor.phoneNo}}</td>
-            <td>{{mentor.gender}}</td>
-            <td>{{ mentor.department | idToName : departmentList }}</td>
-            <td>
-                <button type="button" class="btn btn-info mx-3" (click)="onEdit(mentor.id)" >Edit</button>
-                <button type="button" class="btn btn-danger" (click)="onDelete(mentor.id)" >Delete</button>
-            
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-
-

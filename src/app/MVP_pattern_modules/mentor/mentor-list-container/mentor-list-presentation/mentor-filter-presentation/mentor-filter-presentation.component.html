@@ -1,6 +1,6 @@
 <div class="bg-white h-100 ">
 {{filteredForm.value | json}}
-    <button type="button" (click)="Onclose()" class="btn btn-danger">X</button>
+    <button type="button" (click)="onClose()" class="btn btn-danger">X</button>
 
     <form [formGroup]="filteredForm" (ngSubmit)="onSubmit()">
         <div class="d-flex m-3">
