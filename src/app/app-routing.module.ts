@@ -58,6 +58,7 @@ const routes: Routes = [
 
   
   { path: 'subject', loadChildren: () => import('./features/subject/subject.module').then(m => m.SubjectModule) },
+  { path: 'file-upload', loadChildren: () => import('./MVP_pattern_modules/file-upload/file-upload.module').then(m => m.FileUploadModule) },
 
   {
     path: '**',

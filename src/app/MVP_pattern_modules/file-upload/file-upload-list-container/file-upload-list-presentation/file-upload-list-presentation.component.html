@@ -1,0 +1,42 @@
+<table class="table table-hover mb-3">
+    <thead>
+        <tr class="table-dark">
+            <th>Sno.</th>
+            <th>
+                File Name
+            </th>
+            <th>
+                size </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr *ngFor="let file of fileList ; let i = index" class="table-success">
+            
+            <td>{{file.id}}</td>
+            <td>
+                
+                {{file.fileName}}
+            </td>
+            <td>
+                {{file.size}}
+            </td>
+            <td>
+                {{file.type}}
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" (click)="deleteFile(file.id)">Delete</button>
+                <button type="button" class="btn btn-primary" (click)="editFile(file.content)">View</button>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
+
+

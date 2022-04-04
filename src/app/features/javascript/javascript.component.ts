@@ -1,12 +1,18 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 export class ok {
     firstName: string;
     company: string;
     gender: string;
     age: number;
+}
+export class file {
+    fileName: string;
+    size: number;
+    type: string;
+    content: string;
 }
 
 @Component({
@@ -19,15 +25,15 @@ export class JavascriptComponent implements OnInit {
 
     mapedArray: Array<ok>;
     filteredArray: Array<ok>;
-    spreadedArray:any;
-    stringyfyedArray:any
+    spreadedArray: any;
+    stringyfyedArray: any
 
 
     constructor() {
         this.filter()
-        this.spread () 
-        this.stringyfy () 
-        this.map() 
+        this.spread()
+        this.stringyfy()
+        this.map()
     }
 
     array1 = [
@@ -101,9 +107,9 @@ export class JavascriptComponent implements OnInit {
 
     public filter() {
         this.filteredArray = this.array1.filter((data) => data.company === '1rivet');
-        console.log("filtered array",this.filteredArray);
+        console.log("filtered array", this.filteredArray);
     }
-    
+
 
 
     temporary: {
@@ -136,7 +142,7 @@ export class JavascriptComponent implements OnInit {
     // Deeeeeeeep TCopy
     public stringyfy() {
         this.stringyfyedArray = this.temporary.map((firm) => {
-            console.log("original array",JSON.stringify(firm));
+            console.log("original array", JSON.stringify(firm));
             let t = JSON.parse(JSON.stringify(firm));
             if (t.name === 'Ooook') {
                 t.obj.a = "Tesla"
@@ -144,8 +150,8 @@ export class JavascriptComponent implements OnInit {
             return t;
         }
         )
-        console.log("stringyfyedArray",this.stringyfyedArray)
-        console.log("stringyfyedArray-temporary",this.temporary)
+        console.log("stringyfyedArray", this.stringyfyedArray)
+        console.log("stringyfyedArray-temporary", this.temporary)
     }
 
     // Shallow Copy
@@ -158,8 +164,8 @@ export class JavascriptComponent implements OnInit {
             return t;
         }
         )
-        console.log("spreadedArray",this.spreadedArray)
-        console.log("spreadedArray-temporary",this.temporary)
+        console.log("spreadedArray", this.spreadedArray)
+        console.log("spreadedArray-temporary", this.temporary)
     }
 
     public map() {
@@ -178,5 +184,38 @@ export class JavascriptComponent implements OnInit {
 
     drop(event: CdkDragDrop<ok[]>) {
         moveItemInArray(this.array2, event.previousIndex, event.currentIndex);
-      }
+    }
+
+    fromdate : string
+    todate : string
+    fromDate(event: any) {
+        console.log("fromdate",event.target.value)
+        this.fromdate = event.target.value
+
+    }
+    toDate(event: any) {
+        console.log("todate",event.target.value)
+        this.todate = event.target.value
+    }
+
+
+
+
+    readFile(event: any){
+        let file =event.files[0];
+        let myFile : file= {} as file;
+        myFile.fileName = file.name;
+        myFile.size = file.size;
+        myFile.type =file.type;
+
+        let fileReader = new FileReader();
+
+        fileReader.readAsDataURL(file)
+        fileReader.onload = (e) => {myFile.content = e.target?.result as string; console.log(myFile)} 
+     }
+
+
+
+
+    
 }
