@@ -13,6 +13,13 @@ export class file {
     size: number;
     type: string;
     content: string;
+
+    constructor(fileName: string, size: number, conent: string, type: string = "image") {
+        this.fileName = fileName
+        this.type = type
+        this.size = size
+        this.content = conent
+    }
 }
 
 @Component({
@@ -31,8 +38,8 @@ export class JavascriptComponent implements OnInit {
 
     constructor() {
         this.filter()
-        this.spread()
-        this.stringyfy()
+        // this.spread()
+        // this.stringyfy()
         this.map()
     }
 
@@ -101,7 +108,10 @@ export class JavascriptComponent implements OnInit {
         },
     ]
 
+
     ngOnInit(): void {
+        const newFile = new file("jigar", 66, "aa")
+        console.log(newFile);
 
     }
 
@@ -112,61 +122,61 @@ export class JavascriptComponent implements OnInit {
 
 
 
-    temporary: {
-        name: string,
-        obj: {
-            a: string
-        }
-    }[] = [
-            {
-                name: "Ok",
-                obj: {
-                    a: "Not Ok"
-                }
-            },
-            {
-                name: "Okkk",
-                obj: {
-                    a: "Not Okkk"
-                }
-            },
-            {
-                name: "Ooook",
-                obj: {
-                    a: "Not Ooook"
-                }
-            }
-        ];
+    // temporary: {
+    //     name: string,
+    //     obj: {
+    //         a: string
+    //     }
+    // }[] = [
+    //         {
+    //             name: "jigar",
+    //             obj: {
+    //                 gender: "male"
+    //             }
+    //         },
+    //         {
+    //             name: "Okkk",
+    //             obj: {
+    //                 a: "Not Okkk"
+    //             }
+    //         },
+    //         {
+    //             name: "Ooook",
+    //             obj: {
+    //                 a: "Not Ooook"
+    //             }
+    //         }
+    //     ];
 
 
-    // Deeeeeeeep TCopy
-    public stringyfy() {
-        this.stringyfyedArray = this.temporary.map((firm) => {
-            console.log("original array", JSON.stringify(firm));
-            let t = JSON.parse(JSON.stringify(firm));
-            if (t.name === 'Ooook') {
-                t.obj.a = "Tesla"
-            }
-            return t;
-        }
-        )
-        console.log("stringyfyedArray", this.stringyfyedArray)
-        console.log("stringyfyedArray-temporary", this.temporary)
-    }
+    // Deep Copy
+    // public stringyfy() {
+    //     this.stringyfyedArray = this.temporary.map((firm) => {
+    //         console.log("original array", JSON.stringify(firm));
+    //         let t = JSON.parse(JSON.stringify(firm));
+    //         if (t.name === 'Ooook') {
+    //             t.obj.a = "Tesla"
+    //         }
+    //         return t;
+    //     }
+    //     )
+    //     console.log("stringyfyedArray", this.stringyfyedArray)
+    //     console.log("stringyfyedArray-temporary", this.temporary)
+    // }
 
-    // Shallow Copy
-    public spread() {
-        this.spreadedArray = this.temporary.map((firm) => {
-            let t = { ...firm };
-            if (t.name === 'Ooook') {
-                t.obj.a = "Tesla"
-            }
-            return t;
-        }
-        )
-        console.log("spreadedArray", this.spreadedArray)
-        console.log("spreadedArray-temporary", this.temporary)
-    }
+    // // Shallow Copy
+    // public spread() {
+    //     this.spreadedArray = this.temporary.map((firm) => {
+    //         let t = { ...firm };
+    //         if (t.name === 'Ooook') {
+    //             t.obj.a = "Tesla"
+    //         }
+    //         return t;
+    //     }
+    //     )
+    //     console.log("spreadedArray", this.spreadedArray)
+    //     console.log("spreadedArray-temporary", this.temporary)
+    // }
 
     public map() {
         this.mapedArray = this.array2.map((firm) => {
@@ -186,36 +196,36 @@ export class JavascriptComponent implements OnInit {
         moveItemInArray(this.array2, event.previousIndex, event.currentIndex);
     }
 
-    fromdate : string
-    todate : string
+    fromdate: string
+    todate: string
     fromDate(event: any) {
-        console.log("fromdate",event.target.value)
+        console.log("fromdate", event.target.value)
         this.fromdate = event.target.value
 
     }
     toDate(event: any) {
-        console.log("todate",event.target.value)
+        console.log("todate", event.target.value)
         this.todate = event.target.value
     }
 
 
 
 
-    readFile(event: any){
-        let file =event.files[0];
-        let myFile : file= {} as file;
+    readFile(event: any) {
+        let file = event.files[0];
+        let myFile: file = {} as file;
         myFile.fileName = file.name;
         myFile.size = file.size;
-        myFile.type =file.type;
+        myFile.type = file.type;
 
         let fileReader = new FileReader();
 
         fileReader.readAsDataURL(file)
-        fileReader.onload = (e) => {myFile.content = e.target?.result as string; console.log(myFile)} 
-     }
+        fileReader.onload = (e) => { myFile.content = e.target?.result as string; console.log(myFile) }
+    }
 
 
 
 
-    
+
 }

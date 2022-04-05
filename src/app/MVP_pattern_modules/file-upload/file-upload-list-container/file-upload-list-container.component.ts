@@ -23,7 +23,7 @@ export class FileUploadListContainerComponent implements OnInit {
 
   getFiles() {
     this.fileList$ = this.service.getFiles();
-
+    
   }
 
   deleteFile(id: string){

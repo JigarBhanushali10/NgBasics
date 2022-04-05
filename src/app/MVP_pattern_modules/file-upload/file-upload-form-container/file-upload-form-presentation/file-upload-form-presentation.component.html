@@ -1,7 +1,29 @@
+<div class="border border-1  w-75 h-50 position-relative d-flex align-self-center">
+    <p class="position-absolute top-50 start-50 translate-middle-x">Drop Your Files Here</p>
+    <input type="file" name="" id="file-uplodd" (change)="readFile($event.target)" multiple
+        class="h-100 w-100 opacity-0">
+</div>
+<div class="d-flex justify-content-between">
 
+    <h3 class="fw-bold fs-3 my-3" >Files to Upload</h3>
+    <button type="button" class (click)="uploadFile()">Upload</button>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-center">No.</th>
+            <th class="text-center">File Name</th>
+            <th class="text-center">File size</th>
+            <th class="text-center">File type</th>
+        </tr>
+    </thead>
+    <tbody>
 
-
-
-<input type="file" name="" id="file-uplodd" (change)="readFile($event.target)" multiple>
-
-<button type="button"  class (click)="uploadFile()">Upload</button>
+        <tr *ngFor=" let file of fileToUpload;let i = index">
+            <td>{{i}}</td>
+            <td>{{file.name}}</td>
+            <td>{{(file.size/1024/1024).toFixed(3)}}</td>
+            <td>{{file.type}}</td>
+        </tr>
+    </tbody>
+</table>

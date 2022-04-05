@@ -14,7 +14,6 @@ export class FileUploadFormPresenterService {
   }
 
   // 
-  // fileInput is an HTML input element: <input type="file" id="myfileinput" multiple>
   fileNames: string[] = [];
 
   getAllFileNames(fileList: any) {
@@ -29,9 +28,11 @@ export class FileUploadFormPresenterService {
   // 
 
   readfile(files: any, fileList: any) {
-    console.log(fileList)
+    console.log(files)
+    console.log(typeof(files))
     this.getAllFileNames(fileList);
     console.log(this.fileNames)
+
     for (let file of files) {
       let myFile: FileDetails = {} as FileDetails;
 
@@ -41,8 +42,8 @@ export class FileUploadFormPresenterService {
 
       let fileReader = new FileReader();
 
-      fileReader.readAsDataURL(file)
       fileReader.onload = (e) => { myFile.content = e.target?.result as string; console.log(myFile) }
+      fileReader.readAsDataURL(file)
 
       if (myFile.size / (1024 ** 2) < (2)) {
         if (this.fileNames.includes(myFile.fileName)) {

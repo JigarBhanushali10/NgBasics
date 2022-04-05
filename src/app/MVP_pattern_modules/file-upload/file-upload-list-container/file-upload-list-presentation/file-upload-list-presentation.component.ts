@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { file } from 'src/app/features/javascript/javascript.component';
 import { FileDetails } from '../../model/file.model';
 import { FileUploadListPresenterService } from '../file-upload-list-presenter/file-upload-list-presenter.service';
 
@@ -17,7 +18,7 @@ export class FileUploadListPresentationComponent implements OnInit {
       }
       this._fileList = v;
     }
-    console.log(this._fileList);
+    // console.log(this._fileList);
   }
 
   @Output() public delete: EventEmitter<string>;
@@ -39,8 +40,36 @@ export class FileUploadListPresentationComponent implements OnInit {
     this.delete.emit(id)
   }
 
-  editFile(content: string){
-    
+
+
+
+
+
+  viewFile(url: string, type: string) {
+
+
+    fetch(url)
+      .then(res => res.blob())
+      .then(blob => {
+        const link = new Blob([blob], { type: type })
+        console.log(link);
+        const url = URL.createObjectURL(link)
+        window.open(url, '_blank');
+      })
+
+    //   let arr = this.fileList[index].content.split(','),
+    //     mime = this.fileList[index].type,
+    //     bstr = atob(arr[1]),
+    //     n = bstr.length,
+    //     u8arr = new Uint8Array(n);
+
+    //   while (n--) {
+    //     u8arr[n] = bstr.charCodeAt(n);
+    //   }
+
+    //   window.open(` 
+    // ${new File([u8arr], this.fileList[index].fileName, { type: mime })
+    //     },_blank`)
   }
 
 }

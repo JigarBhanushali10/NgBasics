@@ -15,6 +15,7 @@ export class FileUploadFormContainerComponent implements OnInit {
   
   constructor(private service: FileUploadService) { }
 
+  
   ngOnInit(): void {
     this.getFiles()
   }
@@ -22,13 +23,12 @@ export class FileUploadFormContainerComponent implements OnInit {
   addFiles(files: any) {
     this.service.uploadFile(files).subscribe(res =>
       console.log("going for post", res))
+      alert('New File added ')
   }
 
 
   getFiles() {
     this.fileList$ = this.service.getFiles();
-    
-
-  }
+      }
   
 }

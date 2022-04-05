@@ -1,42 +1,43 @@
+<button type="button " class="btn btn-primary mb-3" routerLink="/file-upload/add"> Add File</button>
+
 <table class="table table-hover mb-3">
     <thead>
         <tr class="table-dark">
-            <th>Sno.</th>
-            <th>
+            <th class="text-center">Sno.</th>
+            <th class="text-center">
                 File Name
             </th>
-            <th>
+            <th class="text-center">
                 size </th>
-            <th>
+            <th class="text-center">
                 Type
             </th>
-            <th>
+            <th class="text-center">
                 Action
             </th>
         </tr>
     </thead>
     <tbody>
-        
+
         <tr *ngFor="let file of fileList ; let i = index" class="table-success">
-            
+
             <td>{{file.id}}</td>
             <td>
-                
+
                 {{file.fileName}}
             </td>
             <td>
-                {{file.size}}
+                {{(file.size/1024/1024).toFixed(3)}}mb
             </td>
+
             <td>
                 {{file.type}}
             </td>
             <td>
-                <button type="button" class="btn btn-danger" (click)="deleteFile(file.id)">Delete</button>
-                <button type="button" class="btn btn-primary" (click)="editFile(file.content)">View</button>
+                <button type="button" class="btn btn-danger mx-3" (click)="deleteFile(file.id)">Delete</button>
+                <button type="button" class="btn btn-primary" (click)="viewFile(file.content,file.type)">View</button>
             </td>
-            
+
         </tr>
     </tbody>
 </table>
-
-
