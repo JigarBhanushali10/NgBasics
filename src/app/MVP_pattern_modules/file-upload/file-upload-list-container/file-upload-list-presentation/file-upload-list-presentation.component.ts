@@ -46,8 +46,6 @@ export class FileUploadListPresentationComponent implements OnInit {
 
 
   viewFile(url: string, type: string) {
-
-
     fetch(url)
       .then(res => res.blob())
       .then(blob => {
@@ -56,20 +54,5 @@ export class FileUploadListPresentationComponent implements OnInit {
         const url = URL.createObjectURL(link)
         window.open(url, '_blank');
       })
-
-    //   let arr = this.fileList[index].content.split(','),
-    //     mime = this.fileList[index].type,
-    //     bstr = atob(arr[1]),
-    //     n = bstr.length,
-    //     u8arr = new Uint8Array(n);
-
-    //   while (n--) {
-    //     u8arr[n] = bstr.charCodeAt(n);
-    //   }
-
-    //   window.open(` 
-    // ${new File([u8arr], this.fileList[index].fileName, { type: mime })
-    //     },_blank`)
-  }
-
+       }
 }

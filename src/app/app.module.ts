@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 // -----------------------------------------------------------------
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DataBindingModule } from './features/data-binding/data-binding.module';
 import { CoreModule } from './core/core.module';
 import {  HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

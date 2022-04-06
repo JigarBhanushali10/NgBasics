@@ -11,13 +11,13 @@ export class ok {
 export class file {
     fileName: string;
     size: number;
-    type: string;
-    content: string;
+    type?: string;
+    content?: string;
 
-    constructor(fileName: string, size: number, conent: string, type: string = "image") {
+    constructor(fileName: string, size: number, conent?: string, type?: string ) {
         this.fileName = fileName
-        this.type = type
         this.size = size
+        this.type = type
         this.content = conent
     }
 }
@@ -138,6 +138,7 @@ console.log(typeof(obj))
     ngOnInit(): void {
         const newFile = new file("jigar", 66, "aa")
         console.log(newFile);
+        this.js()
 
     }
 
@@ -259,26 +260,19 @@ let arr3 = ['Jigar', 'Hrishi', 'Mehul', 'Jay']
 // Array.prototype.every
 console.log('Array.prototype.every')
 console.log(arr1.every(x => x <= 0))
-
-// Array.prototype.fill
-console.log('Array.prototype.fill')
-console.log(arr1.fill(1,4,6)) 
+ 
 
 // Array.prototype.filter
 console.log('Array.prototype.filter')
-console.log(arr2.filter(x => x >= 10))
+console.log(arr2.filter(x => x >= 5))
 
 // Array.prototype.find
 console.log('Array.prototype.find')
-console.log(arr1.find(x => x < 10))
-console.log(arr1.find(x => x > 0))  
-console.log(arr1.find(x => x < 0))
+console.log(arr1.find(x => x < 5))
 
 // Array.prototype.findIndex
 console.log('Array.prototype.findIndex')
-console.log(arr1.findIndex(x => x < 10)) 
-console.log(arr1.findIndex(x => x > 0))  
-console.log(arr1.findIndex(x => x < 0))  
+console.log(arr1.findIndex(x => x < 5)) 
 
 // Array.prototype.forEach
 console.log('Array.prototype.forEach')
