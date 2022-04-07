@@ -9,7 +9,7 @@ import { JavascriptComponent } from './features/javascript/javascript.component'
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '', pathMatch: 'full'
+    redirectTo: 'employee', pathMatch: 'full'
 
   },
   {

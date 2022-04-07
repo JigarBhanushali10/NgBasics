@@ -57,8 +57,9 @@ export class FileUploadFormPresentationComponent implements OnInit {
   newFile: FileDetails[] = []
 
   readFile(event: any) {
-    this.service.readfile(event.files, this._fileList);
+    
     const allFile = event.files;
+    this.service.readfile(allFile, this._fileList);
     console.log(allFile);
     this.fileToUpload = Object.keys(allFile).map((key: any) => allFile[key]);
     console.log("viral", this.fileToUpload);

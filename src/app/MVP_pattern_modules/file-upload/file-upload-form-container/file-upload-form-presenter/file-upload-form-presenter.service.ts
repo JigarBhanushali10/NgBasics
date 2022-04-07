@@ -2,39 +2,39 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { FileDetails } from '../../model/file.model';
 
+const MAX_FILE_SIZE = (1024**2)*2
 @Injectable()
 export class FileUploadFormPresenterService {
-
+  
   private _files: Subject<FileDetails>
   public files$: Observable<FileDetails>
-
+  
   constructor() {
     this._files = new Subject();
     this.files$ = this._files.asObservable();
   }
-
+  
   // 
   fileNames: string[] = [];
-
+  
   getAllFileNames(fileList: any) {
     // loop through files
     for (let i = 0; i < fileList.length; i++) {
-
+      
       // get item name
       this.fileNames.push(fileList[i].fileName);
     }
   }
 
   // 
-
   readfile(files: any, fileList: any) {
     console.log(files)
     console.log(typeof(files))
-    this.getAllFileNames(fileList);
+    this.getAllFileNames(fileList); // name validation
     console.log(this.fileNames)
 
     for (let file of files) {
-      let myFile: FileDetails = {} as FileDetails;
+      let myFile: FileDetails = <FileDetails>{}; // or {} as FileDetails (typecasting) 
 
       myFile.fileName = file.name;
       myFile.size = file.size;
@@ -42,10 +42,10 @@ export class FileUploadFormPresenterService {
 
       let fileReader = new FileReader();
 
-      fileReader.onload = (e) => { myFile.content = e.target?.result as string; console.log(myFile) }
+      fileReader.onload = (file) => { myFile.content = file.target?.result as string;/* console.log(myFile)*/; console.log("target",file.target?.result)  }
       fileReader.readAsDataURL(file)
 
-      if (myFile.size / (1024 ** 2) < (2)) {
+      if (myFile.size < MAX_FILE_SIZE) {
         if (this.fileNames.includes(myFile.fileName)) {
 
           alert("Cannot Upload Same File")
