@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard} from './Auth-gurad/auth.guard';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { JavascriptComponent } from './features/javascript/javascript.component';
 
@@ -35,7 +36,7 @@ const routes: Routes = [
     loadChildren: () => import('../app/features/employee/employee.module').then(m => m.EmployeeModule)
   },
   {
-    path: 'resume',
+    path: 'resume',canLoad:[AuthGuard],
     loadChildren: () => import('./features/resume-builder/resume-builder.module').then(m => m.ResumeBuilderModule)
   },
   {
@@ -51,8 +52,7 @@ const routes: Routes = [
     loadChildren: () => import('./features/ng-template-outlet/ng-template-outlet.module').then(m => m.NgTemplateOutletModule)
   },
   {
-    path: 'javascript',
-    component:JavascriptComponent
+    path: 'javascript',canActivate:[AuthGuard], component:JavascriptComponent
   },
   { path: 'mvpMentor', loadChildren: () => import('./MVP_pattern_modules/mentor/mentor.module').then(m => m.MentorModule) },
 

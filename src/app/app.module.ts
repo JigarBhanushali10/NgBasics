@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JavascriptComponent } from './features/javascript/javascript.component';
 import { CustomInterceptor } from './core/interceptor/custom.interceptor';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { AuthGuard } from './Auth-gurad/auth.guard';
 
 
 // import { UserFormModule } from './features/user-form/user-form.module';
@@ -33,7 +34,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     provide: HTTP_INTERCEPTORS,
     useClass: CustomInterceptor,
     multi: true
-  }],
+  }, AuthGuard],
 
   bootstrap: [AppComponent]
 })
