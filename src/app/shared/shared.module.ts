@@ -6,13 +6,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IdToNamePipe } from './pipes/id-to-name.pipe';
 import { OverlayModule } from '@angular/cdk/overlay';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { HostBindingDirective } from './directives/hostbinding.directive';
  
 
 
 
 
 @NgModule({
-  declarations: [PhoneMaskDirective, DeleteComponent, IdToNamePipe],
+  declarations: [PhoneMaskDirective, DeleteComponent, IdToNamePipe, HostBindingDirective],
   imports: [],
   exports: [
     PhoneMaskDirective,
@@ -22,6 +23,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     OverlayModule,
     DragDropModule,
     CommonModule,
+    HostBindingDirective
   ],
 })
 export class SharedModule { }

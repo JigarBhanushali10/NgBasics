@@ -1,4 +1,12 @@
-<p>child2 works!</p>
+<!-- <p>child2 works!</p>
 <input type="text" value="{{fromChild2}}" placeholder="" #child2>
 
-<button (click)="clickme(child2.value)">click</button>
+<button (click)="clickme(child2.value)">click</button> -->
+
+
+
+<div class="card"  hostbinding >
+    <ng-content select="header"></ng-content>
+    <ng-content select="content"></ng-content>
+    <ng-content select="footer"></ng-content>
+  </div>  

@@ -8,7 +8,7 @@ import { Department } from 'src/app/features/employee/model/employee.model';
 export class IdToNamePipe implements PipeTransform {
 
   transform(value: number, departments: Department[] | null): string | undefined {
-    console.log(departments);
+    // console.log(departments);
     return departments?.find(x => x.id == value)?.name;
   }
 

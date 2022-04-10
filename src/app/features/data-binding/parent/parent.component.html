@@ -1,23 +1,23 @@
-<p>parent works!</p>
+<!-- <p>parent works!</p>
 <app-child1 [fromChild1] = "'Hi from parent'"></app-child1>
 <app-child2 [fromChild2] = "'Hi from parent'"  (newItemEvent)="fromChild2($event)"></app-child2>
-<div [style.borderStyle]=borderStyle> Interpolation Eg With Property binging:-
+<div [style.borderStyle]=borderStyle> Interpolation Eg With Property binging:- -->
     <!-- start: interpolation eg1 -->
-    <p [style.background-color]="color">Hi {{name}} . Your age is {{age}}</p>
+    <!-- <p [style.background-color]="color">Hi {{name}} . Your age is {{age}}</p> -->
     <!-- end: interpolation eg1 -->
     <!-- start: property binding -->
 
 
+<app-child1></app-child1>
 
-
-    <button (click)="ToogleShow($event)" >Click To {{HideOrShow}} Image</button> <br>
+    <!-- <button (click)="ToogleShow($event)" >Click To {{HideOrShow}} Image</button> <br>
     <img width="300rem" src="{{imgPath}}" [hidden]="isHidden" alt=" bitmoji" >
-    <!-- end: property binding -->
+    end: property binding
     <br>
     {{statusCheck()}}
     <br>
     Your app is {{appStatus? status1 : status2}} <br>
-    
+     -->
 
 
 
@@ -41,7 +41,7 @@
       <div [ngstyle]="{'background-color()':}"> hi</div>  -->
       
       
-      <br>
+      <!-- <br>
       <button (click)=RandColor()>Click To Give Random Color To App</button>
       
       <div>
@@ -57,7 +57,7 @@
           {{preview}}
         </p>
       </div>
-      <br><br><br><br><br>
+      <br><br><br><br><br> -->
       <!-- <app-parent>
         <div>
           <div>
@@ -70,4 +70,4 @@
       </app-parent> -->
       <!-- <app-child1></app-child1>
         <app-child2></app-child2> -->
-      </div>
+      <!-- </div> -->

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DataBindingRoutingModule, routingComponents } from './data-binding-routing.module';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -10,6 +11,7 @@ import { FormsModule } from '@angular/forms';
     routingComponents
   ],
   imports: [
+    SharedModule,
     CommonModule,
     DataBindingRoutingModule,
     FormsModule

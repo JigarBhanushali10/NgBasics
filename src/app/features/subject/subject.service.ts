@@ -39,7 +39,7 @@ export class SubjectService {
     item.id = ++this.nextId;
     this.NewUsers.push(item);
     console.log("New Array", this.NewUsers);
-    this._user$.next(this.NewUsers);
+    // this._user$.next(this.NewUsers);
   }
 
   
