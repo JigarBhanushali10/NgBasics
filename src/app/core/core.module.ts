@@ -10,6 +10,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { MasterComponent } from './master/master.component';
 
 
 
@@ -18,20 +20,21 @@ import { SharedModule } from '../shared/shared.module';
     HeaderComponent,
     SidenavComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginPageComponent,
+    MasterComponent
   ],
   imports: [
     CommonModule, 
     HttpClientModule,
     RouterModule,
     SharedModule
-
-    
   ],
   exports: [
     HeaderComponent,
     SidenavComponent,
     FooterComponent,  
+    LoginPageComponent
   ],
 })
 export class CoreModule { }

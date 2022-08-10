@@ -6,7 +6,6 @@ import { CrudService } from '../../services/crud.service';
 @Component({
   selector: 'app-user-form-input',
   templateUrl: './user-form-input.component.html',
-  styleUrls: ['./user-form-input.component.css']
 })
 
 

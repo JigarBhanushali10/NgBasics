@@ -1,0 +1,73 @@
+<div class="h-100 w-100 position-absolute bg-light position-relative" *ngIf="showLoader">
+    <div class="position-absolute top-50 end-50 translate-middle">
+        <div class="loader "></div>
+    </div>
+</div>
+<div class="d-flex justify-content-center align-items-center h-100" *ngIf="!showLoader">
+    <div class="container border border-grey rounded-3 py-5">
+        <div class="row d-flex justify-content-evenly align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                    class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form [ngClass]="showRegister ? 'd-none' : ''">
+                    <!-- Email input -->
+                    <div class="form-floating mb-4">
+                        <input type="text"  class="form-control" id="floatingInput" placeholder="name@example.com" (change)="getUserName($event.target)"  >
+                        <label for="floatingInput">User Name</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" (change)="getPassword($event.target)">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <!-- Checkbox -->
+                        <a href="#!" class="text-secondary">Forgot password?</a>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="btn btn-primary btn-lg px-4" (click)="login()">Login</button>
+                        <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account?
+                            <small href="#" class="text-primary border-bottom border-primary" (click)="register()">Register</small>
+                    </div>
+
+                </form>
+                <form [ngClass]="showRegister ? '' : 'd-none'" [formGroup]="newUser" >
+                    <!-- Email input -->
+                    <div class="form-floating mb-4">
+                        <input type="text"  class="form-control" id="floatingname" placeholder="name@example.com" (change)="getUserName($event.target)" formControlName="userName" >
+                        <label for="floatingname">User Name</label>
+                        <div *ngIf="getValue['userName'].touched">
+                            <small class="text-danger"
+                                *ngIf="getValue['userName'].errors && getValue['userName'].errors['required']">
+                                User name required
+                            </small>
+                        </div>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" (change)="getPassword($event.target)" formControlName="password">
+                        <label for="floatingPassword">Password</label>
+                        <div *ngIf="getValue['password'].touched">
+                            <small class="text-danger"
+                                *ngIf="getValue['password'].errors && getValue['password'].errors['required']">
+                                Password required
+                            </small>
+                        </div>
+                    </div>
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="btn btn-primary btn-lg px-4" (click)="signUp()">Sign-Up</button>
+                        <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account?
+                            <small href="#" class="text-primary border-bottom border-primary" (click)="register()">Sign-in</small>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

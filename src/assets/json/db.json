@@ -1,4 +1,31 @@
 {
+  "admin": [
+    {
+      "id": 1,
+      "userName": "jigar",
+      "password": "jigar123"
+    },
+    {
+      "id": 2,
+      "userName": "aman",
+      "password": "aman123"
+    },
+    {
+      "userName": "rajat",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "userName": "pooja",
+      "password": "pooja123",
+      "id": 4
+    },
+    {
+      "userName": "hiren",
+      "password": "hiren123",
+      "id": 5
+    }
+  ],
   "Department": [
     {
       "id": 1,
@@ -298,6 +325,38 @@
         }
       ],
       "id": 3
+    },
+    {
+      "firstName": "sdvsd",
+      "lastName": "sdvs",
+      "designation": "sdvs",
+      "email": "sdvsdv",
+      "phoneNo": 321,
+      "technicalSkills": [
+        {
+          "skillName": "sddvsdv"
+        },
+        {
+          "skillName": "sdvsdv"
+        }
+      ],
+      "experience": [
+        {
+          "companyName": "sdvs",
+          "designation": "sdv",
+          "description": "sdv",
+          "startYear": 31,
+          "endYear": 121
+        }
+      ],
+      "education": [
+        {
+          "university": "545",
+          "course": "1442",
+          "grade": 1501
+        }
+      ],
+      "id": 4
     }
   ],
   "UserDetails": [
