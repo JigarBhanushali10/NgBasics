@@ -10,14 +10,14 @@ import { UtilityServiceService } from 'src/app/shared/service/utility-service.se
 })
 export class LoginPageComponent implements OnInit {
   userName: string = ''
-  backenduserName: string = ''
   password: string = ''
-  backenduserPassword: string = ''
   creads: any
   showRegister: boolean = false
   showLoader: boolean = false
   newUser: FormGroup;
   newUsersCount: number;
+  count: number = 0;
+  admin: any = {}
 
   constructor(private router: Router, private service: UtilityServiceService, private formBuilder: FormBuilder) {
 
@@ -26,6 +26,7 @@ export class LoginPageComponent implements OnInit {
     this.buildUserform();
     this.getCreds()
   }
+
   getCreds() {
     this.service.login().subscribe((data: any) => this.creads = data)
   }
@@ -38,18 +39,22 @@ export class LoginPageComponent implements OnInit {
   }
 
   login() {
-    this.getCreds()
-    let admin = this.creads.find((ele: { [x: string]: string; }) => ele['userName'] === this.userName)
+    // this.getCreds()
+    this.admin = this.creads.find((ele: { [x: string]: string; }) => ele['userName'] === this.userName)
 
-    if (admin?.['userName'] == this.userName && admin?.['password'] == this.password) {
-
+    if (this.admin?.['userName'] == this.userName && this.admin?.['password'] == this.password) {
       this.showLoader = !this.showLoader
+      localStorage.clear()
+      localStorage.setItem('userName', this.admin?.['userName'])
+      localStorage.setItem('password', this.admin?.['password'])
+      localStorage.setItem('role', this.admin?.['role'])
       setTimeout(() => {
-        this.router.navigateByUrl('/master')
+        this.router.navigateByUrl('/')
       }, 3000);
     }
     else {
-      alert("Incorrect user name or password")
+
+      this.validateAllFormFields(this.newUser); //{7}
     }
 
   }
@@ -90,4 +95,6 @@ export class LoginPageComponent implements OnInit {
       }
     });
   }
+
+  
 }

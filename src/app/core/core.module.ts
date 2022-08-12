@@ -34,7 +34,9 @@ import { MasterComponent } from './master/master.component';
     HeaderComponent,
     SidenavComponent,
     FooterComponent,  
-    LoginPageComponent
+    LoginPageComponent,
+    MasterComponent
+
   ],
 })
 export class CoreModule { }

@@ -10,18 +10,11 @@ import { JavascriptComponent } from './features/javascript/javascript.component'
 
 const routes: Routes = [
 
+
   {
     path: "",
-    redirectTo: 'login',
-    pathMatch: "full"
-  },
-  {
-    path: "login",
-    component: LoginPageComponent
-  },
-  {
-    path: "master",
     component: MasterComponent,
+    canActivateChild: [AuthGuard],
     children: [
       {
         path: 'data-binding',
@@ -73,7 +66,10 @@ const routes: Routes = [
 
     ]
   },
-
+  {
+    path: 'login',
+    component: LoginPageComponent,
+  },
   {
     path: '**',
     component: PageNotFoundComponent

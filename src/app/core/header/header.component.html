@@ -1,3 +1,7 @@
-<div class="header">
-<p>header works!</p>
+<div class="header p-3">
+    <div class="log-out d-flex justify-content-end" >
+        <div routerLink="login" *ngIf="!userName">
+            <span class="icon-logout"></span> <span class="links ps-2">Log-In</span>        
+        </div>
+    </div>
 </div>

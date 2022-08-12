@@ -1,12 +1,15 @@
-<div class="master-component">
+<div class="master-component h-100 w-100" *ngIf="userName">
     <div class="wrapper">
         <label for="toogleCheckBox"><span class="icon-menu"></span></label>
         <input type="checkbox" id="toogleCheckBox">
         <div class="sidenav">
             <app-sidenav></app-sidenav>
         </div>
-        <div class="main p-3 overflow-hidden">
+        <div class="main  overflow-hidden">
+        <app-header></app-header>
+        <div class="p-3">
             <router-outlet></router-outlet>
+        </div>
         </div>
     </div>
 </div>
