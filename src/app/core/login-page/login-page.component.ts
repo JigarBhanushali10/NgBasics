@@ -9,15 +9,13 @@ import { UtilityServiceService } from 'src/app/shared/service/utility-service.se
   styleUrls: ['./login-page.scss'],
 })
 export class LoginPageComponent implements OnInit {
+
   userName: string = ''
   password: string = ''
   creads: any
   showRegister: boolean = false
   showLoader: boolean = false
   newUser: FormGroup;
-  newUsersCount: number;
-  count: number = 0;
-  admin: any = {}
 
   constructor(private router: Router, private service: UtilityServiceService, private formBuilder: FormBuilder) {
 
@@ -40,20 +38,25 @@ export class LoginPageComponent implements OnInit {
 
   login() {
     // this.getCreds()
-    this.admin = this.creads.find((ele: { [x: string]: string; }) => ele['userName'] === this.userName)
+    if (this.userName && this.password) {
+      let admin: any = {}
+      admin = this.creads.find((ele: { [x: string]: string; }) => ele['userName'] === this.userName)
+      if (admin?.['userName'] == this.userName && admin?.['password'] == this.password) {
+        this.showLoader = !this.showLoader
+        localStorage.clear()
+        localStorage.setItem('userName', admin?.['userName'])
+        localStorage.setItem('password', admin?.['password'])
+        localStorage.setItem('role', admin?.['role'])
+        setTimeout(() => {
+          this.router.navigateByUrl('/')
+        }, 3000);
 
-    if (this.admin?.['userName'] == this.userName && this.admin?.['password'] == this.password) {
-      this.showLoader = !this.showLoader
-      localStorage.clear()
-      localStorage.setItem('userName', this.admin?.['userName'])
-      localStorage.setItem('password', this.admin?.['password'])
-      localStorage.setItem('role', this.admin?.['role'])
-      setTimeout(() => {
-        this.router.navigateByUrl('/')
-      }, 3000);
+      }
+      if (admin?.['userName'] != this.userName || admin?.['password'] != this.password) {
+        alert(" Invalid Username or Password")
+      }
     }
     else {
-
       this.validateAllFormFields(this.newUser); //{7}
     }
 
@@ -81,7 +84,6 @@ export class LoginPageComponent implements OnInit {
     } else {
       this.validateAllFormFields(this.newUser); //{7}
     }
-
   }
 
 
@@ -96,5 +98,5 @@ export class LoginPageComponent implements OnInit {
     });
   }
 
-  
+
 }

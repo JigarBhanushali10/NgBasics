@@ -56,7 +56,7 @@ const routes: Routes = [
         loadChildren: () => import('./features/ng-template-outlet/ng-template-outlet.module').then(m => m.NgTemplateOutletModule)
       },
       {
-        path: 'javascript', canActivate: [AuthGuard], component: JavascriptComponent
+        path: 'javascript', component: JavascriptComponent
       },
       { path: 'mvpMentor', loadChildren: () => import('./MVP_pattern_modules/mentor/mentor.module').then(m => m.MentorModule) },
 
