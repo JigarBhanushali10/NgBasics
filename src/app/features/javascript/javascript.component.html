@@ -86,4 +86,11 @@
 
 <input type="file" name="" id="" (change)="readFile($event.target)">
 
+<p>dashboard works!</p>
+<select (change)="getValue($event)">
+    <option value="add-options">ADD +</option>
+    <option value={{option.value}} *ngFor="let option of options" [selected]="option.default">{{option.value}}</option>
 
+</select>
+<input type="text" name="" id="input" *ngIf="showInput" [(ngModel)]="value"  onfocus="this.value = ''"> 
+<button (click)="add()" *ngIf="showInput">Add</button>

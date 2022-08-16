@@ -11,6 +11,7 @@ import { CustomInterceptor } from './core/interceptor/custom.interceptor';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AuthGuard } from './Auth-gurad/auth.guard';
 import { LoginPageComponent } from './core/login-page/login-page.component';
+import { FormsModule } from '@angular/forms';
 
 
 // import { UserFormModule } from './features/user-form/user-form.module';
@@ -28,6 +29,7 @@ import { LoginPageComponent } from './core/login-page/login-page.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     DragDropModule,
+    FormsModule
   ], 
 
   providers: [{
