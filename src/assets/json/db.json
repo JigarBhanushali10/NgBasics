@@ -436,22 +436,22 @@
       "office": "1"
     },
     {
-      "id": 16,
       "firstName": "xfbdfb",
-      "lastName": "dfbfd",
       "email": "dfbdfbW@f",
       "phoneNo": 424,
-      "clientName": "1",
-      "office": "2"
+      "dateOfEmployment": "",
+      "gender": "male",
+      "department": "2",
+      "id": 16
     },
     {
-      "id": 17,
       "firstName": "shyam",
-      "lastName": "dfbfd",
       "email": "dfbdfbW@f",
-      "phoneNo": 4563563,
-      "clientName": "2",
-      "office": "1"
+      "phoneNo": 0,
+      "dateOfEmployment": "",
+      "gender": "",
+      "department": "",
+      "id": 17
     }
   ],
   "Offices": [
